@@ -284,10 +284,6 @@
                 <div class="nav-menu" id="navMenu">
                     <a href="location.html" class="active">Location</a>
                     <a href="menu.html">Menu</a>
-                    <a href="#" class="cart-icon" aria-label="Cart">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-badge" id="cartCount">0</span>
-                    </a>
                 </div>
             </nav>
         </div>
@@ -421,12 +417,6 @@
                     header.classList.remove('scrolled');
                 }
             });
-
-            // ===== CART BADGE =====
-            var badge = document.getElementById('cartCount');
-            if (badge) {
-                badge.textContent = '0';
-            }
 
             console.log('📍 The Kava Corner — Location page loaded with map on right.');
         })();

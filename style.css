@@ -171,26 +171,6 @@ header.scrolled {
 .nav-links a:hover {
     color: var(--pink-rich);
 }
-.nav-links .cart-icon {
-    position: relative;
-    font-size: clamp(1rem, 1.4vw, 1.3rem);
-    color: var(--green-deep);
-}
-.cart-badge {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background: var(--pink-rich);
-    color: var(--white);
-    font-size: 0.55rem;
-    font-weight: 700;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 /* ===== HERO PREMIUM ===== */
 .hero-premium {
@@ -633,7 +613,7 @@ header.scrolled {
 
 .product-card-premium-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -653,32 +633,6 @@ header.scrolled {
     font-size: clamp(1.1rem, 1.4vw, 1.4rem);
     font-weight: 700;
     color: var(--green-deep);
-}
-
-.btn-add-premium {
-    background: var(--green-deep);
-    color: var(--white);
-    border: none;
-    padding: clamp(8px, 1vw, 12px) clamp(14px, 1.8vw, 20px);
-    border-radius: 40px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: clamp(0.7rem, 0.8vw, 0.8rem);
-    letter-spacing: 0.5px;
-}
-
-.btn-add-premium:hover {
-    background: var(--pink-rich);
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(232, 130, 181, 0.3);
-}
-
-.btn-add-premium i {
-    font-size: clamp(0.6rem, 0.7vw, 0.7rem);
 }
 
 .product-hover-reveal {
@@ -701,31 +655,7 @@ header.scrolled {
 .product-hover-reveal .quick-desc {
     font-size: clamp(0.7rem, 0.8vw, 0.8rem);
     color: #666;
-    margin-bottom: 10px;
     line-height: 1.4;
-}
-
-.btn-add-premium-secondary {
-    background: transparent;
-    border: 2px solid var(--pink-rich);
-    color: var(--pink-rich);
-    padding: clamp(6px, 0.8vw, 10px) clamp(12px, 1.5vw, 18px);
-    border-radius: 40px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: clamp(0.65rem, 0.7vw, 0.75rem);
-    width: 100%;
-    justify-content: center;
-}
-
-.btn-add-premium-secondary:hover {
-    background: var(--pink-rich);
-    color: var(--white);
-    transform: scale(1.02);
 }
 
 /* Carousel */
@@ -1105,9 +1035,6 @@ footer {
     .nav-links a:not(.cart-icon) {
         display: none;
     }
-    .nav-links .cart-icon {
-        margin-left: auto;
-    }
     .hero-premium-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1149,9 +1076,10 @@ footer {
         justify-content: center;
     }
 
-    /* ===== MOBILE COLOR ENHANCEMENTS ===== */
+    /* ===== VIBRANT MOBILE ENHANCEMENTS ===== */
+    /* Hero - brighter, more vivid on mobile */
     .hero-premium {
-        background: linear-gradient(160deg, #1a4a3a 0%, #4FA392 35%, #E882B5 70%, #F5D4E1 100%);
+        background: linear-gradient(160deg, #0F2A22 0%, #3a8a7a 35%, #d96ea8 70%, #f0c4d4 100%);
     }
     
     .hero-badge {
@@ -1159,6 +1087,7 @@ footer {
         backdrop-filter: none;
         color: #fff;
         border-color: rgba(255, 255, 255, 0.3);
+        font-weight: 600;
     }
     
     .hero-premium-badges span {
@@ -1166,6 +1095,7 @@ footer {
         backdrop-filter: none;
         color: #fff;
         border-color: rgba(255, 255, 255, 0.2);
+        font-weight: 500;
     }
     
     .stat-number {
@@ -1173,24 +1103,59 @@ footer {
     }
     
     .stat-label {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 500;
     }
     
+    .hero-premium-title {
+        color: #fff;
+    }
+    
+    .title-highlight {
+        background: linear-gradient(135deg, #F5D4E1, #E882B5, #D4AF37);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .hero-premium-desc p {
+        color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Product cards - solid bright backgrounds on mobile */
     .product-card-premium {
         background: #ffffff;
         backdrop-filter: none;
-        border: 1px solid var(--pink-soft);
+        border: 2px solid var(--pink-rich);
+        box-shadow: 0 8px 30px rgba(232, 130, 181, 0.2);
     }
     
     .product-card-premium:hover {
-        border-color: var(--pink-rich);
+        border-color: var(--green-mid);
+        box-shadow: 0 16px 40px rgba(79, 163, 146, 0.25);
     }
     
     .product-hover-reveal {
         background: #ffffff;
         backdrop-filter: none;
+        border-top: 2px solid var(--pink-soft);
     }
     
+    .product-badge-premium {
+        background: var(--green-deep);
+        color: #fff;
+        font-weight: 700;
+    }
+    
+    .product-badge-premium.best-seller {
+        background: linear-gradient(135deg, var(--pink-rich), #D4AF37);
+    }
+    
+    .product-price span {
+        color: var(--green-deep);
+    }
+
+    /* Info cards - bright on mobile */
     .info-card {
         background: #ffffff;
         border: 2px solid var(--pink-rich);
@@ -1206,6 +1171,7 @@ footer {
         background: rgba(232, 130, 181, 0.15);
         border-color: var(--pink-rich);
         color: var(--green-deep);
+        font-weight: 600;
     }
     
     .info-card-badge span:first-child {
@@ -1214,16 +1180,31 @@ footer {
         color: var(--green-deep);
     }
     
+    .info-card h3 {
+        color: var(--green-deep);
+    }
+    
+    .info-card p {
+        color: #333;
+    }
+
+    /* Testimonials - bright on mobile */
     .testi-card {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: none;
         border: 2px solid var(--pink-rich);
+        box-shadow: 0 8px 30px rgba(232, 130, 181, 0.12);
     }
     
     .testi-card .stars {
         color: var(--pink-rich);
     }
     
+    .testi-card p {
+        color: #2f2a2a;
+    }
+
+    /* Section backgrounds - more vibrant */
     .section-block-green {
         background: #4FA392;
     }
@@ -1236,6 +1217,7 @@ footer {
         background: #ffffff;
     }
     
+    /* Buttons - more vibrant */
     .btn-primary {
         background: var(--green-deep);
         color: #fff;
@@ -1252,27 +1234,44 @@ footer {
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
     
-    .btn-add-premium {
-        background: var(--green-deep);
-        color: #fff;
-    }
-    
-    .btn-add-premium:hover {
-        background: var(--pink-rich);
-    }
-    
-    .cart-badge {
-        background: var(--pink-rich);
-        color: #fff;
-    }
-    
+    /* Carousel dots - more visible */
     .carousel-dot {
         border-color: var(--pink-rich);
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.4);
     }
     
     .carousel-dot.active {
         background: var(--pink-rich);
+        box-shadow: 0 0 30px rgba(232, 130, 181, 0.6);
+    }
+    
+    /* Section titles - brighter on mobile */
+    .section-title {
+        background: linear-gradient(135deg, var(--green-deep), var(--pink-rich));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .section-sub {
+        color: #444;
+        font-weight: 500;
+    }
+
+    /* Mobile menu enhancements */
+    .nav-menu {
+        background: var(--cream-warm);
+        border-left: 4px solid var(--pink-rich);
+    }
+    
+    .nav-menu a {
+        color: var(--green-deep);
+        font-weight: 600;
+    }
+    
+    .nav-menu a:hover {
+        color: var(--pink-rich);
+        border-bottom-color: var(--pink-rich);
     }
 }
 
@@ -1373,11 +1372,7 @@ footer {
         border-bottom-color: var(--pink-rich);
     }
     
-    .nav-menu .cart-icon {
-        font-size: 1.4rem;
-        margin-top: 8px;
-    }
-    
+    /* Overlay */
     .nav-overlay {
         position: fixed;
         top: 0;
@@ -1398,15 +1393,12 @@ footer {
         visibility: visible;
     }
     
+    /* Hide old nav items on mobile */
     .nav-links a:not(.cart-icon) {
         display: none;
     }
     
-    .nav-links .cart-icon {
-        display: flex;
-        margin-left: auto;
-    }
-    
+    /* Fix header for mobile */
     header {
         padding: 10px 0;
     }
@@ -1416,6 +1408,7 @@ footer {
     }
 }
 
+/* Tablet and up - hide hamburger */
 @media (min-width: 540px) {
     .hamburger {
         display: none !important;

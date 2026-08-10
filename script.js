@@ -121,42 +121,12 @@ script.js – The Kava Corner · Bold · Feminine · Premium
         });
     }
 
-    // ===== ADD TO CART =====
-    document.querySelectorAll('.btn-add-premium, .btn-add-premium-secondary').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            var name = this.getAttribute('data-product') || 'item';
-            
-            // Animated feedback
-            var originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-check"></i> Added!';
-            this.style.background = '#4FA392';
-            
-            setTimeout(function() {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-            }, 1500);
-            
-            var badge = document.getElementById('cartCount');
-            if (badge) {
-                badge.textContent = parseInt(badge.textContent || 0) + 1;
-                badge.style.transform = 'scale(1.3)';
-                setTimeout(function() {
-                    badge.style.transform = 'scale(1)';
-                }, 300);
-            }
-        });
-    });
-
     // ===== TESTIMONIALS =====
     const testimonials = [
         { text: 'The Kava Corner is my daily reset. Smooth, calm, and absolutely authentic.', author: 'Maya R.', stars: 5, verified: true },
         { text: 'Best kava I\'ve ever had. The corner vibe is real — I feel the aloha every time.', author: 'James K.', stars: 5, verified: true },
         { text: 'Love the ready-to-drink cans. Perfect for winding down after work.', author: 'Sarah L.', stars: 4, verified: false },
-        { text: 'Noble powder blends so well. This is my new ritual.', author: 'David T.', stars: 5, verified: true },
-        { text: 'The Mango Guava Splash is my new favorite! So refreshing.', author: 'Elena M.', stars: 5, verified: true },
-        { text: 'Orange Sunrise gives me the perfect morning boost. Love it!', author: 'Chris P.', stars: 5, verified: true }
+        { text: 'Noble powder blends so well. This is my new ritual.', author: 'David T.', stars: 5, verified: true }
     ];
 
     var carousel = document.getElementById('testiCarousel');
@@ -166,7 +136,7 @@ script.js – The Kava Corner · Bold · Feminine · Premium
             var emptyStars = '☆'.repeat(5 - t.stars);
             return `
                 <div class="testi-card">
-                    <div class="quote">“</div>
+                    <div class="quote">"</div>
                     <p>${t.text}</p>
                     <div class="stars">${fullStars}${emptyStars}</div>
                     <div class="author">${t.author}</div>
@@ -196,12 +166,6 @@ script.js – The Kava Corner · Bold · Feminine · Premium
             header.classList.remove('scrolled');
         }
     });
-
-    // ===== CART BADGE INIT =====
-    var badge = document.getElementById('cartCount');
-    if (badge) {
-        badge.textContent = '0';
-    }
 
     console.log('🌸 The Kava Corner — Premium redesign loaded.');
 })();
@@ -256,8 +220,3 @@ script.js – The Kava Corner · Bold · Feminine · Premium
         });
     }
 })();
-
-// Add this inside the hamburger menu initialization
-document.querySelector('.nav-menu .cart-icon')?.addEventListener('click', function(e) {
-    e.stopPropagation(); // Prevents the menu from closing when cart is clicked
-});
