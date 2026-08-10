@@ -1,5 +1,5 @@
 /* ============================================================
-   script.js – The Kava Corner · Bold · Feminine · Premium
+script.js – The Kava Corner · Bold · Feminine · Premium
    ============================================================ */
 
 (function() {
@@ -154,7 +154,9 @@
         { text: 'The Kava Corner is my daily reset. Smooth, calm, and absolutely authentic.', author: 'Maya R.', stars: 5, verified: true },
         { text: 'Best kava I\'ve ever had. The corner vibe is real — I feel the aloha every time.', author: 'James K.', stars: 5, verified: true },
         { text: 'Love the ready-to-drink cans. Perfect for winding down after work.', author: 'Sarah L.', stars: 4, verified: false },
-        { text: 'Noble powder blends so well. This is my new ritual.', author: 'David T.', stars: 5, verified: true }
+        { text: 'Noble powder blends so well. This is my new ritual.', author: 'David T.', stars: 5, verified: true },
+        { text: 'The Mango Guava Splash is my new favorite! So refreshing.', author: 'Elena M.', stars: 5, verified: true },
+        { text: 'Orange Sunrise gives me the perfect morning boost. Love it!', author: 'Chris P.', stars: 5, verified: true }
     ];
 
     var carousel = document.getElementById('testiCarousel');
@@ -203,3 +205,59 @@
 
     console.log('🌸 The Kava Corner — Premium redesign loaded.');
 })();
+
+// ===== HAMBURGER MENU =====
+(function() {
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (hamburger && navMenu) {
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'nav-overlay';
+        document.body.appendChild(overlay);
+        
+        function toggleMenu() {
+            const isOpen = navMenu.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+        
+        function closeMenu() {
+            navMenu.classList.remove('open');
+            hamburger.classList.remove('active');
+            overlay.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+        
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', closeMenu);
+        
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+                closeMenu();
+            }
+        });
+        
+        // Handle resize - close menu if screen gets larger
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 540 && navMenu.classList.contains('open')) {
+                closeMenu();
+            }
+        });
+    }
+})();
+
+// Add this inside the hamburger menu initialization
+document.querySelector('.nav-menu .cart-icon')?.addEventListener('click', function(e) {
+    e.stopPropagation(); // Prevents the menu from closing when cart is clicked
+});

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>The Kava Corner · bold · premium · feminine</title>
+    <title>The Kava Corner · Hot Girls Drink Kava</title>
     <meta name="description" content="Experience calm with The Kava Corner. Premium noble kava sourced from the Pacific Islands." />
     <link rel="canonical" href="https://www.thekavacorner.com/" />
     <meta property="og:title" content="The Kava Corner · Your Daily Calm" />
@@ -37,13 +37,20 @@
                 </span>
             </a>
             <nav class="nav-links" aria-label="Main navigation">
-                <a href="location.html">Location</a>
-                <a href="menu.html">Menu</a>
-                <a href="#" class="cart-icon" aria-label="Cart">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-badge" id="cartCount">0</span>
-                </a>
-            </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+    <div class="nav-menu" id="navMenu">
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+        <a href="#" class="cart-icon" aria-label="Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge" id="cartCount">0</span>
+        </a>
+    </div>
+</nav>
         </div>
     </header>
 
@@ -96,7 +103,7 @@
                 <div class="hero-premium-image-wrapper">
                     <div class="image-glow"></div>
                     <img 
-                        src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&h=600&fit=crop&crop=center&auto=format" 
+                        src="images/3drinks.jpg" 
                         alt="Premium kava experience" 
                         loading="lazy"
                         class="hero-premium-image"
@@ -116,44 +123,117 @@
 
             <div class="product-carousel-wrapper">
                 <div class="product-carousel-track" id="productTrack">
-                    <!-- Product 1 -->
+                    
+                    <!-- ===== NEW PRODUCT 13: MANGO GUAVA SPLASH ===== -->
                     <div class="product-card-premium">
                         <div class="product-card-premium-image">
-                            <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&h=400&fit=crop&crop=center&auto=format" alt="Kava Shot" loading="lazy" />
-                            <span class="product-badge-premium">Corner Favorite</span>
+                            <img src="images/mangoguavasplash.jpg" alt="Mango Guava Splash" loading="lazy" />
+                            <span class="product-badge-premium">New</span>
                         </div>
                         <div class="product-card-premium-content">
                             <div class="product-meta">
-                                <h3>Kava Shot</h3>
+                                <h3>Mango Guava Splash</h3>
                                 <div class="product-origin">
                                     <i class="fas fa-map-pin"></i>
-                                    <span>Fiji</span>
+                                    <span>Tropical</span>
                                 </div>
                             </div>
                             <div class="product-rating">
                                 <span class="stars">★★★★★</span>
-                                <span class="rating-count">(124)</span>
+                                <span class="rating-count">(42)</span>
                             </div>
                             <div class="product-card-premium-footer">
                                 <div class="product-price">
-                                    <s>$15.00</s>
-                                    <span>$12.00</span>
+                                    <span>$8.00</span>
                                 </div>
-                                <button class="btn-add-premium" data-product="Kava Shot">
+                                <button class="btn-add-premium" data-product="Mango Guava Splash">
                                     <i class="fas fa-plus"></i>
                                     <span>Add</span>
                                 </button>
                             </div>
                         </div>
                         <div class="product-hover-reveal">
-                            <p class="quick-desc">Smooth and calming. Perfect for a quick reset.</p>
-                            <button class="btn-add-premium-secondary" data-product="Kava Shot">
+                            <p class="quick-desc">Tropical mango, guava, lime and kava. Sweet &amp; calming.</p>
+                            <button class="btn-add-premium-secondary" data-product="Mango Guava Splash">
                                 <i class="fas fa-shopping-bag"></i>
                                 Quick Add
                             </button>
                         </div>
                     </div>
 
+                    <!-- ===== NEW PRODUCT 14: ORANGE SUNRISE ===== -->
+                    <div class="product-card-premium">
+                        <div class="product-card-premium-image">
+                            <img src="images/orangesunrise.jpg" alt="Orange Sunrise" loading="lazy" />
+                            <span class="product-badge-premium popular">Popular</span>
+                        </div>
+                        <div class="product-card-premium-content">
+                            <div class="product-meta">
+                                <h3>Orange Sunrise</h3>
+                                <div class="product-origin">
+                                    <i class="fas fa-map-pin"></i>
+                                    <span>Citrus</span>
+                                </div>
+                            </div>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(58)</span>
+                            </div>
+                            <div class="product-card-premium-footer">
+                                <div class="product-price">
+                                    <span>$8.00</span>
+                                </div>
+                                <button class="btn-add-premium" data-product="Orange Sunrise">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-hover-reveal">
+                            <p class="quick-desc">Orange, peach, lime and kratom. Bright &amp; refreshing.</p>
+                            <button class="btn-add-premium-secondary" data-product="Orange Sunrise">
+                                <i class="fas fa-shopping-bag"></i>
+                                Quick Add
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ===== NEW PRODUCT 15: HONEY LEMON BREEZE ===== -->
+                    <div class="product-card-premium">
+                        <div class="product-card-premium-image">
+                            <img src="images/honeylemonbreeze.jpg" alt="Honey Lemon Breeze" loading="lazy" />
+                            <span class="product-badge-premium">Corner Favorite</span>
+                        </div>
+                        <div class="product-card-premium-content">
+                            <div class="product-meta">
+                                <h3>Honey Lemon Breeze</h3>
+                                <div class="product-origin">
+                                    <i class="fas fa-map-pin"></i>
+                                    <span>Botanical</span>
+                                </div>
+                            </div>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(37)</span>
+                            </div>
+                            <div class="product-card-premium-footer">
+                                <div class="product-price">
+                                    <span>$8.00</span>
+                                </div>
+                                <button class="btn-add-premium" data-product="Honey Lemon Breeze">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-hover-reveal">
+                            <p class="quick-desc">Lemon, lavender honey &amp; sparkling kava. Light &amp; floral.</p>
+                            <button class="btn-add-premium-secondary" data-product="Honey Lemon Breeze">
+                                <i class="fas fa-shopping-bag"></i>
+                                Quick Add
+                            </button>
+                        </div>
+                    </div>
                     <!-- Product 2 -->
                     <div class="product-card-premium">
                         <div class="product-card-premium-image">
@@ -565,11 +645,67 @@
                             </button>
                         </div>
                     </div>
+
+
                 </div>
             </div>
 
             <!-- Carousel Navigation Dots -->
             <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT IS KAVA & KRATOM? ===== -->
+    <section class="section-block-white" aria-label="Learn about Kava and Kratom" id="about">
+        <div class="container">
+            <div class="text-center reveal">
+                <h2 class="section-title">Kava & Kratom</h2>
+                <p class="section-sub">Ancient plants, modern calm. Discover the roots of relaxation.</p>
+            </div>
+
+            <div class="info-grid">
+                <!-- Kava Card -->
+                <div class="info-card reveal">
+                    <div class="info-card-icon">🌿</div>
+                    <h3>What is Kava?</h3>
+                    <p>
+                        Kava is a traditional ceremonial drink from the Pacific Islands, crafted from the root of the 
+                        <em>Piper methysticum</em> plant. It's cherished for its ability to promote a state of deep relaxation, 
+                        ease social anxiety, and encourage peaceful sleep—without affecting mental clarity. 
+                        At The Kava Corner, we source only the highest quality noble kava, lab-tested for purity.
+                    </p>
+                    <div class="info-card-badge">
+                        <span>🧪 Lab Tested</span>
+                        <span>🌺 Noble Kava</span>
+                        <span>🌏 Pacific Grown</span>
+                    </div>
+                </div>
+
+                <!-- Kratom Card -->
+                <div class="info-card reveal">
+                    <div class="info-card-icon">🍃</div>
+                    <h3>What is Kratom?</h3>
+                    <p>
+                        Kratom comes from the leaves of the <em>Mitragyna speciosa</em> tree, native to Southeast Asia. 
+                        It's known for its versatile effects—smaller amounts can uplift and energize, while larger amounts 
+                        can provide profound relaxation and comfort. We offer premium kratom strains, carefully selected 
+                        for quality and consistency, to help you find your perfect balance.
+                    </p>
+                    <div class="info-card-badge">
+                        <span>🌱 Premium Strains</span>
+                        <span>⚖️ Balanced Effects</span>
+                        <span>🌾 Sustainably Sourced</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="info-cta text-center reveal">
+                <p>Ready to experience the difference? Explore our collection of premium kava and kratom.</p>
+                <a href="menu.html" class="btn-primary">
+                    Explore the Menu <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -586,7 +722,7 @@
             <div class="split-image reveal">
                 <div class="drink-placeholder">
                     <img 
-                        src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&h=400&fit=crop&crop=center&auto=format" 
+                        src="images/store.jpg" 
                         alt="Kava corner location" 
                         loading="lazy"
                     />
@@ -615,7 +751,7 @@
                 <span class="corner">Corner</span>
                 <p class="footer-tagline">Find Your Corner.</p>
                 <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/thekavacorner/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                     <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
