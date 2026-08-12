@@ -199,6 +199,7 @@ footer { background:#0F2A22; color:rgba(255,255,255,0.8); padding:clamp(32px,6vh
 .social-icons a:hover { color:#E882B5; transform:scale(1.08); }
 .footer-copy { text-align:center; font-size:clamp(0.55rem,0.7vw,0.7rem); opacity:0.5; padding-top:16px; border-top:1px solid rgba(255,255,255,0.06); margin-top:16px; grid-column:1/-1; }
 
+
 /* ===== SCROLL REVEAL ===== */
 .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.8s cubic-bezier(0.2,0.9,0.3,1), transform 0.8s cubic-bezier(0.2,0.9,0.3,1); }
 .reveal.visible { opacity:1; transform:translateY(0); }
