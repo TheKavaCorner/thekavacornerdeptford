@@ -1,477 +1,109 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
-		/>
-		<title>The Kava Corner · Location</title>
-		<meta
-			name="description"
-			content="Visit The Kava Corner at 1406 Clement Bridge Rd, Deptford NJ 08096. Get directions and find your corner of calm."
-		/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>The Kava Corner · Location</title>
+  <meta name="description" content="Visit The Kava Corner at 1406 Clement Bridge Rd, Deptford NJ 08096. Get directions and find your corner of calm." />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/flowerlogo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/flowerlogo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/flowerlogo.png" />
+  <link rel="canonical" href="https://www.thekavacorner.com/location.html" />
+  <meta property="og:title" content="The Kava Corner · Find Us" />
+  <meta property="og:description" content="Visit us at 1406 Clement Bridge Rd, Deptford NJ 08096." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Oswald:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .location-hero { min-height:40vh; display:flex; align-items:center; background:linear-gradient(160deg,#0F2A22 0%,#4FA392 45%,#E882B5 85%,#F5D4E1 100%); position:relative; overflow:hidden; padding:clamp(80px,12vh,140px) 0 clamp(30px,6vh,60px); }
+    .location-hero .float-shapes { position:absolute; width:100%; height:100%; top:0; left:0; pointer-events:none; overflow:hidden; }
+    .location-hero .shape { position:absolute; border-radius:50%; background:var(--pink-glow); filter:blur(60px); animation:floatShape 14s infinite alternate ease-in-out; }
+    .location-hero .shape:nth-child(1) { width:clamp(120px,25vw,350px); height:clamp(120px,25vw,350px); top:-60px; right:-40px; background:rgba(232,130,181,0.3); }
+    .location-hero .shape:nth-child(2) { width:clamp(100px,18vw,250px); height:clamp(100px,18vw,250px); bottom:20px; left:-30px; background:rgba(79,163,146,0.3); animation-duration:18s; }
+    @keyframes floatShape { 0% { transform:translate(0,0) scale(1); } 100% { transform:translate(30px,-30px) scale(1.1); } }
+    .location-hero-content { position:relative; z-index:2; text-align:center; width:100%; }
+    .location-hero-content h1 { font-family:'Oswald',sans-serif; font-size:clamp(2rem,7vw,4.5rem); font-weight:700; line-height:1.1; color:#fff; margin-bottom:clamp(8px,1.5vh,20px); text-shadow:0 4px 20px rgba(0,0,0,0.08); }
+    .location-hero-content h1 span { background:linear-gradient(135deg,#F5D4E1,#E882B5,#fff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .location-hero-content p { font-size:clamp(0.9rem,1.4vw,1.2rem); color:rgba(255,255,255,0.9); max-width:520px; margin:0 auto; font-weight:400; }
+    .location-details { padding:var(--space-section) 0; background:#fff; }
+    .location-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(30px,4vw,60px); align-items:start; }
+    .location-info { display:flex; flex-direction:column; gap:clamp(16px,2vw,24px); order:1; }
+    .location-info h2 { font-family:'Oswald',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); color:#0F2A22; }
+    .location-info h2 span { background:linear-gradient(135deg,#E882B5,#4FA392); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .location-info .divider-line { width:clamp(40px,6vw,80px); height:5px; background:#E882B5; border-radius:10px; margin:4px 0 8px; }
+    .location-info .address-block, .location-info .hours-block, .location-info .contact-block { display:flex; align-items:flex-start; gap:16px; padding:clamp(16px,2vw,24px); background:#FDF8F4; border-radius:clamp(20px,4vw,32px); border:2px solid #F5D4E1; transition:0.4s cubic-bezier(0.34,1.56,0.64,1); }
+    .location-info .address-block:hover, .location-info .hours-block:hover, .location-info .contact-block:hover { border-color:#E882B5; box-shadow:0 12px 40px rgba(232,130,181,0.15); }
+    .location-info .address-block i, .location-info .hours-block i, .location-info .contact-block i { font-size:clamp(1.2rem,1.8vw,1.8rem); color:#E882B5; margin-top:4px; }
+    .location-info .address-block .address-text, .location-info .hours-block .hours-text, .location-info .contact-block .contact-text { font-size:clamp(0.95rem,1.2vw,1.1rem); line-height:1.6; }
+    .location-info .address-block .address-text strong, .location-info .hours-block .hours-text strong, .location-info .contact-block .contact-text strong { color:#0F2A22; font-weight:700; }
+    .location-info .contact-block .contact-text a { color:#0F2A22; text-decoration:none; transition:0.2s; }
+    .location-info .contact-block .contact-text a:hover { color:#E882B5; }
+    .location-info .btn-group { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+    .btn-pink { background:#E882B5; box-shadow:0 8px 24px rgba(232,130,181,0.35); }
+    .btn-pink:hover { background:#4FA392; color:#1A1A1A; box-shadow:0 14px 36px rgba(79,163,146,0.4); }
+    .map-container-wrapper { order:2; }
+    .map-container { width:100%; border-radius:clamp(20px,4vw,32px); overflow:hidden; box-shadow:0 20px 50px rgba(232,130,181,0.15); border:4px solid #F5D4E1; transition:0.4s cubic-bezier(0.34,1.56,0.64,1); position:relative; }
+    .map-container:hover { border-color:#E882B5; box-shadow:0 24px 60px rgba(232,130,181,0.25); transform:scale(1.01); }
+    .map-container iframe { width:100%; height:clamp(350px,50vh,500px); display:block; border:none; }
+    @media (max-width:768px) { .location-grid { grid-template-columns:1fr; gap:clamp(30px,4vw,50px); } .location-info { order:2; } .map-container-wrapper { order:1; } .location-info .btn-group { justify-content:center; } .location-info { text-align:center; } .location-info .divider-line { margin:4px auto 8px; } .location-info .address-block, .location-info .hours-block, .location-info .contact-block { flex-direction:column; align-items:center; text-align:center; } }
+    .under-construction { background:#E882B5; color:#fff; text-align:center; padding:clamp(10px,2vh,20px) clamp(16px,4vw,32px); font-weight:600; font-size:clamp(0.85rem,1.2vw,1.1rem); letter-spacing:0.5px; border-bottom:3px solid #D4AF37; }
+    .under-construction i { margin-right:10px; }
+  </style>
+</head>
+<body>
+  <div class="under-construction"><i class="fas fa-hard-hat"></i> We're building something beautiful — our website is currently under construction. Stay tuned! <i class="fas fa-heart" style="color:#D4AF37;margin-left:6px;"></i></div>
 
-		<!-- Standard favicon -->
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="images/flowerlogo.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="images/flowerlogo.png"
-		/>
-		<!-- Apple touch icon for iOS -->
-		<link rel="apple-touch-icon" sizes="180x180" href="images/flowerlogo.png" />
+  <header id="mainHeader">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo" aria-label="The Kava Corner home">
+        <span class="logo-icon"><svg viewBox="0 0 100 100"><path d="M50 10 L20 40 L30 60 L50 90 L70 60 L80 40 L50 10 Z" fill="none" stroke="#E882B5" stroke-width="4"/><circle cx="50" cy="50" r="8" fill="#E882B5"/></svg></span>
+        <span class="logo-text"><span class="the">The</span><span class="kava">KAVA</span><span class="corner">Corner</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation"><a href="location.html" class="active">Location</a><a href="menu.html">Menu</a></nav>
+    </div>
+  </header>
 
-		<link rel="canonical" href="https://www.thekavacorner.com/location.html" />
-		<meta property="og:title" content="The Kava Corner · Find Us" />
-		<meta
-			property="og:description"
-			content="Visit us at 1406 Clement Bridge Rd, Deptford NJ 08096."
-		/>
+  <section class="location-hero" aria-label="Location banner">
+    <div class="float-shapes"><div class="shape"></div><div class="shape"></div></div>
+    <div class="container location-hero-content"><h1>Find <span>Your Corner</span></h1><p>Visit us at our cozy corner in Deptford, NJ. We can't wait to welcome you.</p></div>
+  </section>
 
-		<!-- Fonts & Icons -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Oswald:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap"
-			rel="stylesheet"
-		/>
-		<link			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-		/>
+  <section class="location-details" id="map">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info reveal">
+          <h2>Our <span>Corner</span></h2>
+          <div class="divider-line"></div>
+          <div class="address-block"><i class="fas fa-location-dot"></i><div class="address-text"><strong>📍 Address</strong><br />1406 Clement Bridge Rd<br />Deptford, NJ 08096</div></div>
+          <div class="hours-block"><i class="fas fa-clock"></i><div class="hours-text"><strong>🕐 Hours</strong><br />Monday – Friday: 10:00 AM – 10:00 PM<br />Saturday – Sunday: 11:00 AM – 11:00 PM</div></div>
+          <div class="contact-block"><i class="fas fa-phone"></i><div class="contact-text"><strong>📞 Contact</strong><br /><a href="tel:+18561234567">(856) 123-4567</a><br /><a href="mailto:hello@thekavacorner.com">hello@thekavacorner.com</a></div></div>
+          <div class="btn-group">
+            <a href="https://www.google.com/maps/dir//1406+Clement+Bridge+Rd,+Deptford,+NJ+08096" target="_blank" class="btn-primary btn-pink"><i class="fas fa-directions" style="margin-right:8px"></i> Get Directions</a>
+            <a href="https://www.google.com/maps/place/1406+Clement+Bridge+Rd,+Deptford,+NJ+08096" target="_blank" class="btn-primary"><i class="fas fa-map" style="margin-right:8px"></i> Open in Maps</a>
+          </div>
+        </div>
+        <div class="map-container-wrapper reveal">
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3064.004526662531!2d-75.11395632450218!3d39.829316191182734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d02a52ec293b%3A0x43d141a2a769d3d2!2s1406%20Clements%20Bridge%20Rd%2C%20Deptford%2C%20NJ%2008096!5e0!3m2!1sen!2sus!4v1785803727154!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps location of The Kava Corner"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<!-- External CSS -->
-		<link rel="stylesheet" href="style.css" />
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo"><span class="the">The</span><span class="kava">KAVA</span><span class="corner">Corner</span><p class="footer-tagline">Find Your Corner.</p><div class="social-icons"><a href="https://www.instagram.com/thekavacorner/" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+      <div class="footer-links"><h4>Shop</h4><a href="menu.html">Kava Shots</a><a href="menu.html">Powders</a><a href="menu.html">Ready-to-Drink</a><a href="menu.html">Bundles</a></div>
+      <div class="footer-links"><h4>Support</h4><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
+      <div class="footer-copy">&copy; 2026 The Kava Corner — crafted with calm &amp; color.</div>
+    </div>
+  </footer>
 
-		<style>
-			/* ===== LOCATION PAGE SPECIFIC STYLES ===== */
-			.location-hero {
-				min-height: 40vh;
-				display: flex;
-				align-items: center;
-				background: linear-gradient(
-					160deg,
-					#0f2a22 0%,
-					#4fa392 45%,
-					#e882b5 85%,
-					#f5d4e1 100%
-				);
-				position: relative;
-				overflow: hidden;
-				padding: clamp(80px, 12vh, 140px) 0 clamp(30px, 6vh, 60px);
-			}
-			.location-hero .float-shapes {
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				pointer-events: none;
-				overflow: hidden;
-			}
-			.location-hero .shape {
-				position: absolute;
-				border-radius: 50%;
-				background: var(--pink-glow);
-				filter: blur(60px);
-				animation: floatShape 14s infinite alternate ease-in-out;
-			}
-			.location-hero .shape:nth-child(1) {
-				width: clamp(120px, 25vw, 350px);
-				height: clamp(120px, 25vw, 350px);
-				top: -60px;
-				right: -40px;
-				background: rgba(232, 130, 181, 0.3);
-			}
-			.location-hero .shape:nth-child(2) {
-				width: clamp(100px, 18vw, 250px);
-				height: clamp(100px, 18vw, 250px);
-				bottom: 20px;
-				left: -30px;
-				background: rgba(79, 163, 146, 0.3);
-				animation-duration: 18s;
-			}
-			@keyframes floatShape {
-				0% {
-					transform: translate(0, 0) scale(1);
-				}
-				100% {
-					transform: translate(30px, -30px) scale(1.1);
-				}
-			}
-			.location-hero-content {
-				position: relative;
-				z-index: 2;
-				text-align: center;
-				width: 100%;
-			}
-			.location-hero-content h1 {
-				font-family: "Oswald", sans-serif;
-				font-size: clamp(2rem, 7vw, 4.5rem);
-				font-weight: 700;
-				line-height: 1.1;
-				color: var(--white);
-				margin-bottom: clamp(8px, 1.5vh, 20px);
-				text-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-			}
-			.location-hero-content h1 span {
-				background: linear-gradient(135deg, #f5d4e1, #e882b5, #fff);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-			.location-hero-content p {
-				font-size: clamp(0.9rem, 1.4vw, 1.2rem);
-				color: rgba(255, 255, 255, 0.9);
-				max-width: 520px;
-				margin: 0 auto;
-				font-weight: 400;
-			}
-
-			/* ===== LOCATION DETAILS ===== */
-			.location-details {
-				padding: var(--space-section) 0;
-				background: var(--white);
-			}
-			.location-grid {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: clamp(30px, 4vw, 60px);
-				align-items: start;
-			}
-			.location-info {
-				display: flex;
-				flex-direction: column;
-				gap: clamp(16px, 2vw, 24px);
-				order: 1;
-			}
-			.location-info h2 {
-				font-family: "Oswald", sans-serif;
-				font-size: clamp(1.8rem, 4vw, 2.8rem);
-				color: var(--green-deep);
-			}
-			.location-info h2 span {
-				background: linear-gradient(135deg, var(--pink-rich), var(--green-mid));
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-			.location-info .divider-line {
-				width: clamp(40px, 6vw, 80px);
-				height: 5px;
-				background: var(--pink-rich);
-				border-radius: 10px;
-				margin: 4px 0 8px;
-			}
-			.location-info .address-block,
-			.location-info .hours-block,
-			.location-info .contact-block {
-				display: flex;
-				align-items: flex-start;
-				gap: 16px;
-				padding: clamp(16px, 2vw, 24px);
-				background: var(--cream-warm);
-				border-radius: var(--radius-card);
-				border: 2px solid var(--pink-soft);
-				transition: var(--transition);
-			}
-			.location-info .address-block:hover,
-			.location-info .hours-block:hover,
-			.location-info .contact-block:hover {
-				border-color: var(--pink-rich);
-				box-shadow: var(--shadow-glass);
-			}
-			.location-info .address-block i,
-			.location-info .hours-block i,
-			.location-info .contact-block i {
-				font-size: clamp(1.2rem, 1.8vw, 1.8rem);
-				color: var(--pink-rich);
-				margin-top: 4px;
-			}
-			.location-info .address-block .address-text,
-			.location-info .hours-block .hours-text,
-			.location-info .contact-block .contact-text {
-				font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-				line-height: 1.6;
-			}
-			.location-info .address-block .address-text strong,
-			.location-info .hours-block .hours-text strong,
-			.location-info .contact-block .contact-text strong {
-				color: var(--green-deep);
-				font-weight: 700;
-			}
-			.location-info .contact-block .contact-text a {
-				color: var(--green-deep);
-				text-decoration: none;
-				transition: 0.2s;
-			}
-			.location-info .contact-block .contact-text a:hover {
-				color: var(--pink-rich);
-			}
-			.location-info .btn-group {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 12px;
-				margin-top: 8px;
-			}
-			.btn-pink {
-				background: var(--pink-rich);
-				box-shadow: 0 8px 24px rgba(232, 130, 181, 0.35);
-			}
-			.btn-pink:hover {
-				background: var(--green-mid);
-				color: var(--text-dark);
-				box-shadow: 0 14px 36px rgba(79, 163, 146, 0.4);
-			}
-
-			/* ===== MAP CONTAINER - RIGHT SIDE ===== */
-			.map-container-wrapper {
-				order: 2;
-			}
-			.map-container {
-				width: 100%;
-				border-radius: var(--radius-card);
-				overflow: hidden;
-				box-shadow: 0 20px 50px rgba(232, 130, 181, 0.15);
-				border: 4px solid var(--pink-soft);
-				transition: var(--transition);
-				position: relative;
-			}
-			.map-container:hover {
-				border-color: var(--pink-rich);
-				box-shadow: 0 24px 60px rgba(232, 130, 181, 0.25);
-				transform: scale(1.01);
-			}
-			.map-container iframe {
-				width: 100%;
-				height: clamp(350px, 50vh, 500px);
-				display: block;
-				border: none;
-			}
-
-			/* ===== RESPONSIVE ===== */
-			@media (max-width: 768px) {
-				.location-grid {
-					grid-template-columns: 1fr;
-					gap: clamp(30px, 4vw, 50px);
-				}
-				.location-info {
-					order: 2;
-				}
-				.map-container-wrapper {
-					order: 1;
-				}
-				.location-info .btn-group {
-					justify-content: center;
-				}
-				.location-info {
-					text-align: center;
-				}
-				.location-info .divider-line {
-					margin: 4px auto 8px;
-				}
-				.location-info .address-block,
-				.location-info .hours-block,
-				.location-info .contact-block {
-					flex-direction: column;
-					align-items: center;
-					text-align: center;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<!-- ===== HEADER ===== -->
-		<header id="mainHeader">
-			<div class="container nav-wrapper">
-				<a href="index.html" class="logo" aria-label="The Kava Corner home">
-					<span class="logo-icon">
-						<svg viewBox="0 0 100 100">
-							<path
-								d="M50 10 L20 40 L30 60 L50 90 L70 60 L80 40 L50 10 Z"
-								fill="none"
-								stroke="#E882B5"
-								stroke-width="4"
-							/>
-							<circle cx="50" cy="50" r="8" fill="#E882B5" />
-						</svg>
-					</span>
-					<span class="logo-text">
-						<span class="the">The</span>
-						<span class="kava">KAVA</span>
-						<span class="corner">Corner</span>
-					</span>
-				</a>
-				<nav class="nav-links" aria-label="Main navigation">
-					<a href="location.html" class="active">Location</a>
-					<a href="menu.html">Menu</a>
-				</nav>
-			</div>
-		</header>
-
-		<!-- ===== LOCATION HERO ===== -->
-		<section class="location-hero" aria-label="Location banner">
-			<div class="float-shapes">
-				<div class="shape"></div>
-				<div class="shape"></div>
-			</div>
-			<div class="container location-hero-content">
-				<h1>Find <span>Your Corner</span></h1>
-				<p>
-					Visit us at our cozy corner in Deptford, NJ. We can't wait to welcome
-					you.
-				</p>
-			</div>
-		</section>
-
-		<!-- ===== LOCATION DETAILS ===== -->
-		<section class="location-details" id="map">
-			<div class="container">
-				<div class="location-grid">
-					<!-- Left Column: Info -->
-					<div class="location-info reveal">
-						<h2>Our <span>Corner</span></h2>
-						<div class="divider-line"></div>
-
-						<div class="address-block">
-							<i class="fas fa-location-dot"></i>
-							<div class="address-text">
-								<strong>📍 Address</strong><br />
-								1406 Clement Bridge Rd<br />
-								Deptford, NJ 08096
-							</div>
-						</div>
-
-						<div class="hours-block">
-							<i class="fas fa-clock"></i>
-							<div class="hours-text">
-								<strong>🕐 Hours</strong><br />
-								Monday – Friday: 10:00 AM – 10:00 PM<br />
-								Saturday – Sunday: 11:00 AM – 11:00 PM
-							</div>
-						</div>
-
-						<div class="contact-block">
-							<i class="fas fa-phone"></i>
-							<div class="contact-text">
-								<strong>📞 Contact</strong><br />
-								<a href="tel:+18561234567">(856) 123-4567</a><br />
-								<a href="mailto:hello@thekavacorner.com"
-									>hello@thekavacorner.com</a
-								>
-							</div>
-						</div>
-
-						<div class="btn-group">
-							<a
-								href="https://www.google.com/maps/dir//1406+Clement+Bridge+Rd,+Deptford,+NJ+08096"
-								target="_blank"
-								class="btn-primary btn-pink"
-							>
-								<i class="fas fa-directions" style="margin-right: 8px"></i> Get
-								Directions
-							</a>
-							<a
-								href="https://www.google.com/maps/place/1406+Clement+Bridge+Rd,+Deptford,+NJ+08096"
-								target="_blank"
-								class="btn-primary"
-							>
-								<i class="fas fa-map" style="margin-right: 8px"></i> Open in
-								Maps
-							</a>
-						</div>
-					</div>
-
-					<!-- Right Column: Map -->
-					<div class="map-container-wrapper reveal">
-						<div class="map-container">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3064.004526662531!2d-75.11395632450218!3d39.829316191182734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d02a52ec293b%3A0x43d141a2a769d3d2!2s1406%20Clements%20Bridge%20Rd%2C%20Deptford%2C%20NJ%2008096!5e0!3m2!1sen!2sus!4v1785803727154!5m2!1sen!2sus"
-								allowfullscreen=""
-								loading="lazy"
-								referrerpolicy="no-referrer-when-downgrade"
-								title="Google Maps location of The Kava Corner"
-							></iframe>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ===== FOOTER ===== -->
-		<footer>
-			<div class="container footer-inner">
-				<div class="footer-logo">
-					<span class="the">The</span>
-					<span class="kava">KAVA</span>
-					<span class="corner">Corner</span>
-					<p class="footer-tagline">Find Your Corner.</p>
-					<div class="social-icons">
-						<a
-							href="https://www.instagram.com/thekavacorner/"
-							aria-label="Instagram"
-							><i class="fab fa-instagram"></i
-						></a>
-						<a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-						<a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-					</div>
-				</div>
-				<div class="footer-links">
-					<h4>Shop</h4>
-					<a href="menu.html">Kava Shots</a><a href="menu.html">Powders</a
-					><a href="menu.html">Ready-to-Drink</a><a href="menu.html">Bundles</a>
-				</div>
-				<div class="footer-links">
-					<h4>Support</h4>
-					<a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a
-					><a href="#">Contact</a>
-				</div>
-				<div class="footer-copy">
-					&copy; 2026 The Kava Corner — crafted with calm &amp; color.
-				</div>
-			</div>
-		</footer>
-
-		<script>
-			(function () {
-				"use strict";
-
-				// ===== SCROLL REVEAL =====
-				var reveals = document.querySelectorAll(".reveal");
-				var observer = new IntersectionObserver(
-					function (entries) {
-						entries.forEach(function (entry) {
-							if (entry.isIntersecting) {
-								entry.target.classList.add("visible");
-							}
-						});
-					},
-					{ threshold: 0.12 },
-				);
-				reveals.forEach(function (el) {
-					observer.observe(el);
-				});
-
-				// ===== HEADER SCROLL =====
-				var header = document.getElementById("mainHeader");
-				window.addEventListener("scroll", function () {
-					if (window.scrollY > 30) {
-						header.classList.add("scrolled");
-					} else {
-						header.classList.remove("scrolled");
-					}
-				});
-
-				console.log(
-					"📍 The Kava Corner — Location page loaded with map on right.",
-				);
-			})();
-		</script>
-	</body>
+  <script>
+    (function(){'use strict';var reveals=document.querySelectorAll('.reveal');var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.12});reveals.forEach(function(el){observer.observe(el);});var header=document.getElementById('mainHeader');window.addEventListener('scroll',function(){if(window.scrollY>30){header.classList.add('scrolled');}else{header.classList.remove('scrolled');}});})();
+  </script>
+</body>
 </html>

@@ -1,11 +1,12 @@
 /* ============================================================
-script.js – The Kava Corner · Bold · Feminine · Premium
+   script.js – The Kava Corner · Bold · Feminine · Premium
+   Includes touch-swipe support for mobile carousel
    ============================================================ */
 
 (function() {
     'use strict';
 
-    // ===== ENHANCED CAROUSEL FUNCTIONALITY =====
+    // ===== ENHANCED CAROUSEL WITH TOUCH SUPPORT =====
     const track = document.getElementById('productTrack');
     const dotsContainer = document.getElementById('carouselDots');
     const prevArrow = document.getElementById('prevArrow');
@@ -28,6 +29,11 @@ script.js – The Kava Corner · Bold · Feminine · Premium
         let cardWidth = 0;
         let gap = 0;
 
+        // ----- TOUCH / SWIPE -----
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isSwiping = false;
+
         function updateDimensions() {
             const firstCard = cards[0];
             if (firstCard) {
@@ -38,9 +44,40 @@ script.js – The Kava Corner · Bold · Feminine · Premium
 
         updateDimensions();
 
-        const totalSlides = Math.ceil(totalCards / cardsPerView);
-        
-        // Create dots
+        function goToSlide(index) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            const maxIndex = Math.max(0, totalCards - cardsPerView);
+            const targetIndex = Math.min(index * cardsPerView, maxIndex);
+            currentIndex = targetIndex;
+            const offset = currentIndex * (cardWidth + gap);
+            track.style.transition = 'transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            track.style.transform = `translateX(-${offset}px)`;
+            updateDots();
+            setTimeout(() => { isTransitioning = false; }, 700);
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            const maxIndex = Math.max(0, totalCards - cardsPerView);
+            if (currentIndex + cardsPerView >= totalCards) {
+                goToSlide(0);
+            } else {
+                goToSlide(Math.floor((currentIndex + cardsPerView) / cardsPerView));
+            }
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            if (currentIndex - cardsPerView < 0) {
+                const lastSlide = Math.floor((totalCards - 1) / cardsPerView);
+                goToSlide(lastSlide);
+            } else {
+                goToSlide(Math.floor((currentIndex - cardsPerView) / cardsPerView));
+            }
+        }
+
+        // ----- DOTS -----
         function createDots() {
             dotsContainer.innerHTML = '';
             const newTotalSlides = Math.ceil(totalCards / cardsPerView);
@@ -66,45 +103,7 @@ script.js – The Kava Corner · Bold · Feminine · Premium
             });
         }
 
-        function goToSlide(index) {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            
-            const maxIndex = Math.max(0, totalCards - cardsPerView);
-            const targetIndex = Math.min(index * cardsPerView, maxIndex);
-            currentIndex = targetIndex;
-            
-            const offset = currentIndex * (cardWidth + gap);
-            track.style.transition = 'transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1)';
-            track.style.transform = `translateX(-${offset}px)`;
-            
-            updateDots();
-            
-            setTimeout(() => {
-                isTransitioning = false;
-            }, 700);
-        }
-
-        function nextSlide() {
-            if (isTransitioning) return;
-            const maxIndex = Math.max(0, totalCards - cardsPerView);
-            if (currentIndex + cardsPerView >= totalCards) {
-                goToSlide(0);
-            } else {
-                goToSlide(Math.floor((currentIndex + cardsPerView) / cardsPerView));
-            }
-        }
-
-        function prevSlide() {
-            if (isTransitioning) return;
-            if (currentIndex - cardsPerView < 0) {
-                const lastSlide = Math.floor((totalCards - 1) / cardsPerView);
-                goToSlide(lastSlide);
-            } else {
-                goToSlide(Math.floor((currentIndex - cardsPerView) / cardsPerView));
-            }
-        }
-
+        // ----- AUTOPLAY -----
         function resetAutoPlay() {
             if (autoPlayInterval) {
                 clearInterval(autoPlayInterval);
@@ -118,27 +117,50 @@ script.js – The Kava Corner · Bold · Feminine · Premium
             autoPlayInterval = setInterval(nextSlide, 5000);
         }
 
-        // Arrow button event listeners
+        // ----- ARROWS -----
         if (prevArrow && nextArrow) {
-            prevArrow.addEventListener('click', function() {
-                prevSlide();
-                resetAutoPlay();
-            });
-            
-            nextArrow.addEventListener('click', function() {
-                nextSlide();
-                resetAutoPlay();
-            });
+            prevArrow.addEventListener('click', function() { prevSlide(); resetAutoPlay(); });
+            nextArrow.addEventListener('click', function() { nextSlide(); resetAutoPlay(); });
         }
 
-        // Handle resize
+        // ----- TOUCH EVENTS (mobile swipe) -----
+        track.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+            isSwiping = true;
+        }, { passive: true });
+
+        track.addEventListener('touchmove', function(e) {
+            // prevent vertical scroll while swiping horizontally
+            if (isSwiping) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        track.addEventListener('touchend', function(e) {
+            if (!isSwiping) return;
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            // threshold: 50px for a swipe
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    // swipe left → next
+                    nextSlide();
+                } else {
+                    // swipe right → prev
+                    prevSlide();
+                }
+                resetAutoPlay();
+            }
+            isSwiping = false;
+        }, { passive: true });
+
+        // ----- RESIZE -----
         let resizeTimeout;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
                 const newCardsPerView = getCardsPerView();
                 updateDimensions();
-                
                 if (newCardsPerView !== cardsPerView) {
                     cardsPerView = newCardsPerView;
                     const newTotalSlides = Math.ceil(totalCards / cardsPerView);
@@ -225,5 +247,5 @@ script.js – The Kava Corner · Bold · Feminine · Premium
         }
     });
 
-    console.log('🌸 The Kava Corner — Premium redesign loaded with enhanced carousel.');
+    console.log('🌸 The Kava Corner — Premium redesign with touch-swipe carousel.');
 })();
