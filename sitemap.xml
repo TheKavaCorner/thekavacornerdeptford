@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- HOMEPAGE -->
+  <!-- PRIMARY HOMEPAGE -->
   <url>
     <loc>https://www.thekavacornerdeptford.com/</loc>
     <lastmod>2026-08-13</lastmod>
@@ -12,7 +10,7 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- MAIN HOMEPAGE (index2.html) -->
+  <!-- ALTERNATE HOMEPAGE (only if you keep it) -->
   <url>
     <loc>https://www.thekavacornerdeptford.com/index2.html</loc>
     <lastmod>2026-08-13</lastmod>
@@ -24,7 +22,7 @@
   <url>
     <loc>https://www.thekavacornerdeptford.com/menu.html</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
@@ -32,78 +30,8 @@
   <url>
     <loc>https://www.thekavacornerdeptford.com/location.html</loc>
     <lastmod>2026-08-13</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  
-  <!-- IMAGES / ASSETS -->
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/hero.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/store.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/mangoguavasplash.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/orangesunrise.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/honeylemonbreeze.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/drink2.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/drink3.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/drink4.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/images/drink5.jpg</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  
-  <!-- STYLESHEET & SCRIPTS -->
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/style.css</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://www.thekavacornerdeptford.com/script.js</loc>
-    <lastmod>2026-08-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.2</priority>
   </url>
   
 </urlset>
