@@ -41,27 +41,416 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
 		/>
-		<link rel="stylesheet" href="style.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family: "Inter", sans-serif;
+				background: #0f2a22;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+			}
+
+			/* ===== HEADER ===== */
+			header {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 1000;
+				padding: clamp(8px, 1.5vh, 16px) 0;
+				background: rgba(253, 248, 244, 0.15);
+				backdrop-filter: blur(16px);
+				-webkit-backdrop-filter: blur(16px);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+			}
+			.container {
+				max-width: 1240px;
+				margin: 0 auto;
+				padding: 0 clamp(16px, 4vw, 48px);
+				width: 100%;
+			}
+			.nav-wrapper {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: clamp(8px, 2vw, 24px);
+			}
+			.logo {
+				display: flex;
+				align-items: center;
+				gap: clamp(4px, 1vw, 12px);
+				text-decoration: none;
+				flex-shrink: 0;
+			}
+			.logo-icon {
+				width: clamp(28px, 4vw, 40px);
+				height: clamp(28px, 4vw, 40px);
+				flex-shrink: 0;
+			}
+			.logo-icon svg {
+				width: 100%;
+				height: 100%;
+				fill: #e882b5;
+				stroke: #e882b5;
+			}
+			.logo-text {
+				display: flex;
+				flex-direction: column;
+				line-height: 1;
+			}
+			.logo-text .the {
+				font-size: clamp(0.35rem, 0.6vw, 0.5rem);
+				letter-spacing: 3px;
+				text-transform: uppercase;
+				opacity: 0.7;
+				color: #fff;
+			}
+			.logo-text .kava {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(1rem, 2.2vw, 1.6rem);
+				font-weight: 700;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				line-height: 1;
+				background: linear-gradient(135deg, #f5d4e1, #e882b5);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+			.logo-text .corner {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(0.45rem, 0.7vw, 0.65rem);
+				letter-spacing: 4px;
+				text-transform: uppercase;
+				color: rgba(255, 255, 255, 0.7);
+			}
+			.nav-links {
+				display: flex;
+				align-items: center;
+				gap: clamp(12px, 2.5vw, 32px);
+				flex-wrap: wrap;
+				justify-content: flex-end;
+			}
+			.nav-links a {
+				color: rgba(255, 255, 255, 0.85);
+				text-decoration: none;
+				font-size: clamp(0.7rem, 1vw, 0.9rem);
+				font-weight: 600;
+				transition: 0.2s;
+				letter-spacing: 0.3px;
+				white-space: nowrap;
+				padding: clamp(4px, 0.5vw, 8px) clamp(8px, 1vw, 16px);
+				border-radius: 40px;
+				border: 2px solid transparent;
+			}
+			.nav-links a:hover {
+				color: #e882b5;
+				border-color: #e882b5;
+			}
+
+			/* ===== HERO / UNDER CONSTRUCTION ===== */
+			.construction-hero {
+				flex: 1;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 100vh;
+				background: linear-gradient(
+					160deg,
+					#0f2a22 0%,
+					#1a4a3a 35%,
+					#4fa392 65%,
+					#e882b5 100%
+				);
+				position: relative;
+				overflow: hidden;
+				padding: clamp(100px, 15vh, 140px) clamp(16px, 4vw, 48px)
+					clamp(40px, 8vh, 80px);
+			}
+			.construction-hero::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background:
+					radial-gradient(
+						circle at 20% 50%,
+						rgba(232, 130, 181, 0.15) 0%,
+						transparent 50%
+					),
+					radial-gradient(
+						circle at 80% 50%,
+						rgba(79, 163, 146, 0.15) 0%,
+						transparent 50%
+					);
+				pointer-events: none;
+			}
+
+			/* Floating shapes */
+			.float-shapes {
+				position: absolute;
+				inset: 0;
+				pointer-events: none;
+				overflow: hidden;
+			}
+			.shape {
+				position: absolute;
+				border-radius: 50%;
+				filter: blur(80px);
+				animation: floatShape 20s infinite alternate ease-in-out;
+			}
+			.shape:nth-child(1) {
+				width: 500px;
+				height: 500px;
+				top: -150px;
+				right: -100px;
+				background: rgba(232, 130, 181, 0.2);
+				animation-duration: 25s;
+			}
+			.shape:nth-child(2) {
+				width: 400px;
+				height: 400px;
+				bottom: -100px;
+				left: -100px;
+				background: rgba(79, 163, 146, 0.2);
+				animation-duration: 18s;
+				animation-delay: 3s;
+			}
+			.shape:nth-child(3) {
+				width: 200px;
+				height: 200px;
+				top: 30%;
+				left: 50%;
+				background: rgba(212, 175, 55, 0.15);
+				animation-duration: 15s;
+				animation-delay: 6s;
+			}
+			@keyframes floatShape {
+				0% {
+					transform: translate(0, 0) scale(1);
+				}
+				100% {
+					transform: translate(40px, -40px) scale(1.1);
+				}
+			}
+
+			.construction-content {
+				position: relative;
+				z-index: 2;
+				text-align: center;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			/* Big Under Construction Sign */
+			.construction-sign {
+				position: relative;
+				display: inline-block;
+				margin-bottom: clamp(20px, 4vh, 40px);
+			}
+			.construction-sign .icon {
+				font-size: clamp(4rem, 10vw, 8rem);
+				display: block;
+				margin-bottom: clamp(8px, 1.5vh, 16px);
+				animation: bounceIcon 2s ease-in-out infinite;
+				color: #d4af37;
+			}
+			@keyframes bounceIcon {
+				0%,
+				100% {
+					transform: translateY(0) rotate(0deg);
+				}
+				50% {
+					transform: translateY(-20px) rotate(-5deg);
+				}
+			}
+
+			.construction-sign h1 {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(3.5rem, 10vw, 8rem);
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: clamp(4px, 1.5vw, 12px);
+				background: linear-gradient(135deg, #f5d4e1, #e882b5, #d4af37, #e882b5);
+				background-size: 300% 300%;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				animation: shimmer 4s ease-in-out infinite;
+				line-height: 1.1;
+				text-shadow: none;
+				position: relative;
+			}
+			@keyframes shimmer {
+				0% {
+					background-position: 0% 50%;
+				}
+				50% {
+					background-position: 100% 50%;
+				}
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+
+			.construction-sign .sub-text {
+				font-size: clamp(1rem, 2vw, 1.8rem);
+				color: rgba(255, 255, 255, 0.8);
+				font-weight: 300;
+				letter-spacing: clamp(4px, 1vw, 8px);
+				text-transform: uppercase;
+				margin-top: clamp(4px, 1vh, 12px);
+				display: block;
+				-webkit-text-fill-color: rgba(255, 255, 255, 0.8);
+			}
+
+			.construction-divider {
+				width: clamp(80px, 15vw, 200px);
+				height: 4px;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					#e882b5,
+					#d4af37,
+					#e882b5,
+					transparent
+				);
+				margin: clamp(16px, 3vh, 32px) auto;
+				border-radius: 10px;
+			}
+
+			.construction-message {
+				font-size: clamp(1rem, 1.4vw, 1.3rem);
+				color: rgba(255, 255, 255, 0.85);
+				max-width: 550px;
+				margin: 0 auto clamp(20px, 4vh, 40px);
+				line-height: 1.7;
+				font-weight: 300;
+			}
+
+			.construction-message i {
+				color: #e882b5;
+				margin: 0 4px;
+			}
+
+			/* Animated construction bars */
+			.progress-bars {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				max-width: 400px;
+				margin: 0 auto;
+			}
+			.progress-bar {
+				height: 8px;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 20px;
+				overflow: hidden;
+				position: relative;
+			}
+			.progress-bar .fill {
+				height: 100%;
+				border-radius: 20px;
+				background: linear-gradient(90deg, #e882b5, #d4af37);
+				animation: progressFill 3s ease-in-out infinite alternate;
+				width: 0%;
+			}
+			.progress-bar:nth-child(1) .fill {
+				animation-delay: 0s;
+			}
+			.progress-bar:nth-child(2) .fill {
+				animation-delay: 0.5s;
+			}
+			.progress-bar:nth-child(3) .fill {
+				animation-delay: 1s;
+			}
+			.progress-bar:nth-child(4) .fill {
+				animation-delay: 1.5s;
+			}
+			@keyframes progressFill {
+				0% {
+					width: 15%;
+				}
+				100% {
+					width: 85%;
+				}
+			}
+
+			.progress-labels {
+				display: flex;
+				justify-content: space-between;
+				font-size: clamp(0.5rem, 0.6vw, 0.65rem);
+				color: rgba(255, 255, 255, 0.4);
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				margin-top: -4px;
+			}
+
+			/* Social links */
+			.social-construction {
+				margin-top: clamp(24px, 4vh, 48px);
+				display: flex;
+				gap: clamp(16px, 2vw, 32px);
+				justify-content: center;
+			}
+			.social-construction a {
+				color: rgba(255, 255, 255, 0.5);
+				font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+				transition: 0.3s;
+				text-decoration: none;
+			}
+			.social-construction a:hover {
+				color: #e882b5;
+				transform: translateY(-4px) scale(1.1);
+			}
+
+			/* Responsive */
+			@media (max-width: 540px) {
+				.construction-sign h1 {
+					font-size: 2.8rem;
+					letter-spacing: 4px;
+				}
+				.construction-sign .icon {
+					font-size: 3rem;
+				}
+				.nav-links {
+					gap: clamp(4px, 1vw, 8px);
+				}
+				.nav-links a {
+					font-size: 0.6rem;
+					padding: 3px 8px;
+				}
+				.progress-bars {
+					max-width: 280px;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<!-- ===== HEADER ===== -->
-		<header id="mainHeader">
+		<header>
 			<div class="container nav-wrapper">
 				<a href="index.html" class="logo" aria-label="The Kava Corner home">
-					<span class="logo-icon"
-						><svg viewBox="0 0 100 100">
+					<span class="logo-icon">
+						<svg viewBox="0 0 100 100">
 							<path
 								d="M50 10 L20 40 L30 60 L50 90 L70 60 L80 40 L50 10 Z"
 								fill="none"
 								stroke="#E882B5"
 								stroke-width="4"
 							/>
-							<circle cx="50" cy="50" r="8" fill="#E882B5" /></svg
-					></span>
-					<span class="logo-text"
-						><span class="the">The</span><span class="kava">KAVA</span
-						><span class="corner">Corner</span></span
-					>
+							<circle cx="50" cy="50" r="8" fill="#E882B5" />
+						</svg>
+					</span>
+					<span class="logo-text">
+						<span class="the">The</span>
+						<span class="kava">KAVA</span>
+						<span class="corner">Corner</span>
+					</span>
 				</a>
 				<nav class="nav-links" aria-label="Main navigation">
 					<a href="location.html">Location</a>
@@ -70,605 +459,55 @@
 			</div>
 		</header>
 
-		<!-- ===== HERO ===== -->
-		<section class="hero-premium" aria-label="Hero banner">
-			<div class="hero-ornaments">
-				<div class="ornament leaf-1"></div>
-				<div class="ornament leaf-2"></div>
-				<div class="ornament circle-1"></div>
-				<div class="ornament circle-2"></div>
+		<!-- ===== UNDER CONSTRUCTION HERO ===== -->
+		<section class="construction-hero">
+			<div class="float-shapes">
+				<div class="shape"></div>
+				<div class="shape"></div>
+				<div class="shape"></div>
 			</div>
-			<div class="container hero-premium-grid">
-				<div class="hero-premium-content">
-					<div class="hero-badge">✨ Rooted in Wellness. Raised in Paradise.</div>
-					<h1 class="hero-premium-title">
-						Find Your <span class="title-highlight">Corner</span
-						><span class="title-sub">of Calm</span>
-					</h1>
-					<div class="hero-premium-desc">
-						<span class="desc-line"></span>
-						<p>
-							Sourced from the Pacific Islands. Brewed with intention. Made for
-							your moment of stillness.
-						</p>
-					</div>
-					<div class="hero-premium-cta">
-						<a href="menu.html" class="btn-premium-primary"
-							><span>Discover Our Menu</span
-							><i class="fas fa-arrow-right"></i
-						></a>
-						<div class="hero-premium-stats">
-							<div class="stat-item">
-								<span class="stat-number">2,000+</span
-								><span class="stat-label">Happy Drinkers</span>
-							</div>
-							<div class="stat-item">
-								<span class="stat-number">100%</span
-								><span class="stat-label">Noble Kava</span>
-							</div>
-						</div>
-					</div>
-					<div class="hero-premium-badges">
-						<span>🌿 100% Noble</span><span>🌏 Pacific Sourced</span
-						><span>🧪 Lab Tested</span><span>✨ Premium Quality</span>
-					</div>
-				</div>
-				<div class="hero-premium-visual">
-					<div class="hero-premium-image-wrapper">
-						<div class="image-glow"></div>
-						<img
-							src="images/hero.jpg"
-							alt="Premium kava experience"
-							loading="lazy"
-							class="hero-premium-image"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
 
-		<!-- ===== MISSION STATEMENT ===== -->
-		<section class="mission-section" aria-label="Our mission">
-			<div class="container">
-				<div class="mission-card reveal">
-					<span class="mission-icon">🌺</span>
-					<h2>Our <span>Mission</span></h2>
-
-					<p
-						style="
-							text-align: left;
-							max-width: 800px;
-							margin: 0 auto;
-							line-height: 1.8;
-						"
-					>
-						At The Kava Corner, our mission is simple: to create a welcoming
-						place where people can relax, connect, and feel good while enjoying
-						healthier options.
-					</p>
-					<p
-						style="
-							text-align: left;
-							max-width: 800px;
-							margin: 16px auto 0;
-							line-height: 1.8;
-						"
-					>
-						We serve high-quality kava, coffee, and a variety of refreshing
-						drinks made with natural ingredients and thoughtfully sourced
-						products. Whether you're looking for an energizing start to your day
-						or a calming way to unwind, we want you to find something that fits
-						how you want to feel.
-					</p>
-					<p
-						style="
-							text-align: left;
-							max-width: 800px;
-							margin: 16px auto 0;
-							line-height: 1.8;
-						"
-					>
-						Kava is at the heart of what we do. For centuries, kava has been
-						enjoyed in Pacific Island cultures as a traditional, ceremonial
-						drink that brings people together through conversation, respect, and
-						connection. We honor those traditions by serving kava with intention
-						and gratitude while creating a welcoming space to enjoy its calming,
-						social experience.
-					</p>
-					<p
-						style="
-							text-align: left;
-							max-width: 800px;
-							margin: 16px auto 0;
-							line-height: 1.8;
-						"
-					>
-						Most importantly, The Kava Corner is about community. Through
-						events, gatherings, and shared experiences, we're creating a place
-						where people can meet, build meaningful relationships, and take a
-						break from the everyday.
-					</p>
-
-					<span class="mission-tag" style="margin-top: 24px"
-						>☀️ Rooted in Tradition · Made with Love</span
-					>
+			<div class="construction-content">
+				<div class="construction-sign">
+					<span class="icon">🚧</span>
+					<h1>Under Construction</h1>
+					<span class="sub-text">Coming Soon</span>
 				</div>
-			</div>
-		</section>
 
-		<!-- ===== PRODUCTS CAROUSEL ===== -->
-		<section
-			class="section-block-green"
-			aria-label="Featured drinks"
-			id="drinks"
-		>
-			<div class="container">
-				<div class="text-center reveal">
-					<h2 class="section-title">Corner Favorites</h2>
-					<p class="section-sub">
-						Traditional. Smooth. Island-grown.
-					</p>
-				</div>
-				<div class="product-carousel-wrapper">
-					<button
-						class="carousel-arrow carousel-arrow-left"
-						id="prevArrow"
-						aria-label="Previous products"
-					>
-						<i class="fas fa-chevron-left"></i>
-					</button>
-					<button
-						class="carousel-arrow carousel-arrow-right"
-						id="nextArrow"
-						aria-label="Next products"
-					>
-						<i class="fas fa-chevron-right"></i>
-					</button>
-					<div class="product-carousel-track" id="productTrack">
-						<!-- Product 1: Island Shell -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/islandshell.jpg"
-									alt="Island Shell"
-									loading="lazy"
-								/><span class="product-badge-premium">Corner Favorite</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Island Shell</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Tropical</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(38)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$10.50</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Pineapple, coconut, vanilla, agave. Smooth &amp; tropical.
-								</p>
-							</div>
-						</div>
-						<!-- Product 2: Coco Calm -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/cococalm.jpg"
-									alt="Coco Calm"
-									loading="lazy"
-								/><span class="product-badge-premium popular">Popular</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Coco Calm</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Island</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(52)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$10.00</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Coconut, lime, agave. Smooth &amp; refreshing.
-								</p>
-							</div>
-						</div>
-						<!-- Product 3: Mango Guava Splash -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/mangoguavasplash.jpg"
-									alt="Mango Guava Splash"
-									loading="lazy"
-								/><span class="product-badge-premium">New</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Mango Guava Splash</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Tropical</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(42)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$12.00</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Mango, guava, pineapple, lime, agave. Sweet &amp; tangy.
-								</p>
-							</div>
-						</div>
-						<!-- Product 4: Lulu Lemonade -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/lululemonade.jpg"
-									alt="Lulu Lemonade"
-									loading="lazy"
-								/><span class="product-badge-premium premium-badge">Premium</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Lulu Lemonade</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Botanical</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(29)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$9.00</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Lemon, sparkling water, agave, butterfly pea flower tea.
-								</p>
-							</div>
-						</div>
-						<!-- Product 5: Hawaiian Lai -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/hawaiianlai.jpg"
-									alt="Hawaiian Lai"
-									loading="lazy"
-								/><span class="product-badge-premium">Corner Favorite</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Hawaiian Lai</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Island</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(34)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$8.00</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Pineapple juice, mango juice, guava juice. Fruity &amp; bright.
-								</p>
-							</div>
-						</div>
-						<!-- Product 6: Smiley Miley -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/smileymiley.jpg"
-									alt="Smiley Miley"
-									loading="lazy"
-								/><span class="product-badge-premium premium-badge">Popular</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Smiley Miley</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Berry</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(27)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$8.00</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Organic strawberry syrup, lemon juice, water, agave.
-								</p>
-							</div>
-						</div>
-						<!-- Product 7: Buia Bowl -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/buiabowl.jpg"
-									alt="Buia Bowl"
-									loading="lazy"
-								/><span class="product-badge-premium">Premium</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Buia Bowl</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Acai</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(45)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$10.50</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Strawberry, banana, blueberry, granola, nutella.
-								</p>
-							</div>
-						</div>
-						<!-- Product 8: Loco for Coco -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/locoforcoco.jpg"
-									alt="Loco for Coco"
-									loading="lazy"
-								/><span class="product-badge-premium">Corner Favorite</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Loco for Coco</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Acai</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(38)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$11.00</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Coconut flakes, chocolate chips, banana, honey.
-								</p>
-							</div>
-						</div>
-						<!-- Product 9: Super Bowl -->
-						<div class="product-card-premium">
-							<div class="product-card-premium-image">
-								<img
-									src="images/superbowl.jpg"
-									alt="Super Bowl"
-									loading="lazy"
-								/><span class="product-badge-premium premium-badge">Premium</span>
-							</div>
-							<div class="product-card-premium-content">
-								<div class="product-meta">
-									<h3>Super Bowl</h3>
-									<div class="product-origin">
-										<i class="fas fa-map-pin"></i><span>Acai</span>
-									</div>
-								</div>
-								<div class="product-rating">
-									<span class="stars">★★★★★</span
-									><span class="rating-count">(41)</span>
-								</div>
-								<div class="product-card-premium-footer">
-									<div class="product-price"><span>$11.00</span></div>
-								</div>
-							</div>
-							<div class="product-hover-reveal">
-								<p class="quick-desc">
-									Banana, mango, goji berries, coconut, agave.
-								</p>
-							</div>
-						</div>
+				<div class="construction-divider"></div>
+
+				<p class="construction-message">
+					<i class="fas fa-seedling"></i> We're building something beautiful.
+					Our new website is on its way — stay tuned for the launch!
+					<i class="fas fa-heart"></i>
+				</p>
+
+				<!-- Animated progress bars -->
+				<div class="progress-bars">
+					<div class="progress-bar"><div class="fill"></div></div>
+					<div class="progress-bar"><div class="fill"></div></div>
+					<div class="progress-bar"><div class="fill"></div></div>
+					<div class="progress-bar"><div class="fill"></div></div>
+					<div class="progress-labels">
+						<span>Design</span>
+						<span>Content</span>
+						<span>Development</span>
+						<span>Launch</span>
 					</div>
 				</div>
-				<div class="carousel-dots" id="carouselDots"></div>
-			</div>
-		</section>
 
-		<!-- ===== WHAT IS KAVA? ===== -->
-		<section
-			class="section-block-white"
-			aria-label="Learn about Kava"
-			id="about"
-		>
-			<div class="container">
-				<div class="text-center reveal">
-					<h2 class="section-title">What is Kava?</h2>
-					<p class="section-sub">
-						Ancient plant, modern calm. Discover the roots of relaxation.
-					</p>
-				</div>
-				<div class="info-grid">
-					<div class="info-card reveal">
-						<div class="info-card-icon">🌿</div>
-						<h3>What is Kava?</h3>
-						<p>
-							Kava is a traditional ceremonial drink from the Pacific Islands,
-							crafted from the root of the <em>Piper methysticum</em> plant.
-							It's cherished for its ability to promote a state of deep
-							relaxation, ease social anxiety, and encourage peaceful
-							sleep—without affecting mental clarity. At The Kava Corner, we
-							source only the highest quality noble kava, lab-tested for purity.
-						</p>
-						<div class="info-card-badge">
-							<span>🧪 Lab Tested</span><span>🌺 Noble Kava</span
-							><span>🌏 Pacific Grown</span>
-						</div>
-					</div>
-					<div class="info-card reveal">
-						<div class="info-card-icon">🌺</div>
-						<h3>Why Noble Kava?</h3>
-						<p>
-							Noble kava is the gold standard—cultivated for its balanced,
-							relaxing effects and clean flavor. Unlike other varieties, noble
-							kava is gentle on the system and rich in kavalactones that promote
-							a sense of well-being. Every batch we serve is tested for quality
-							and purity, so you can sip with confidence.
-						</p>
-						<div class="info-card-badge">
-							<span>✨ Smooth &amp; Calming</span><span>🧪 Lab Verified</span
-							><span>🌿 Sustainably Grown</span>
-						</div>
-					</div>
-				</div>
-				<div class="info-cta text-center reveal">
-					<p>
-						Ready to experience the difference? Explore our full menu of premium drinks.
-					</p>
-					<a href="menu.html" class="btn-primary"
-						>Explore the Menu
-						<i class="fas fa-arrow-right" style="margin-left: 8px"></i
+				<!-- Social Links -->
+				<div class="social-construction">
+					<a
+						href="https://www.instagram.com/thekavacorner/"
+						aria-label="Instagram"
+						><i class="fab fa-instagram"></i
 					></a>
+					<a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+					<a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+					<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
 				</div>
 			</div>
 		</section>
-
-		<!-- ===== LOCATION SECTION ===== -->
-		<section class="section-block-white" aria-label="Location" id="location">
-			<div class="container split-layout">
-				<div class="split-text reveal">
-					<h2>Find <span>Our Corner</span><br />in the City</h2>
-					<div class="divider-line"></div>
-					<p>
-						📍 1406 Clement Bridge Rd <br />Deptford NJ, 08096<br />Open daily:
-						10am - 10pm
-					</p>
-					<p>
-						🌴 Come visit us for a moment of stillness. Our corner is your
-						corner.
-					</p>
-					<a href="location.html" class="btn-primary" style="margin-top: 10px"
-						>Get Directions
-						<i class="fas fa-arrow-right" style="margin-left: 8px"></i
-					></a>
-				</div>
-				<div class="split-image reveal">
-					<div class="drink-placeholder">
-						<img
-							src="images/store.jpg"
-							alt="Kava corner location"
-							loading="lazy"
-						/>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- ===== TESTIMONIALS ===== -->
-		<section class="section-block-pink" aria-label="Customer testimonials">
-			<div class="container">
-				<div class="text-center reveal">
-					<h2
-						class="section-title"
-						style="-webkit-text-fill-color: var(--green-deep)"
-					>
-						What Our Corner Says
-					</h2>
-					<p class="section-sub" style="color: var(--text-dark)">
-						Join 2,000+ happy kava drinkers
-					</p>
-				</div>
-				<div class="testimonial-carousel" id="testiCarousel"></div>
-			</div>
-		</section>
-
-		<!-- ===== FOOTER ===== -->
-		<footer>
-			<div class="container footer-inner">
-				<div class="footer-logo">
-					<span class="the">The</span><span class="kava">KAVA</span
-					><span class="corner">Corner</span>
-					<p class="footer-tagline">Find Your Corner.</p>
-					<div class="social-icons">
-						<a
-							href="https://www.instagram.com/thekavacorner/"
-							aria-label="Instagram"
-							><i class="fab fa-instagram"></i></a
-						><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a
-						><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-					</div>
-				</div>
-				<div class="footer-links">
-					<h4>Shop</h4>
-					<a href="menu.html">Kava Drinks</a><a href="menu.html">Refreshers</a
-					><a href="menu.html">Acai Bowls</a><a href="menu.html">Coffee</a>
-				</div>
-				<div class="footer-links">
-					<h4>Support</h4>
-					<a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a
-					><a href="#">Contact</a>
-				</div>
-
-				<div
-					class="footer-disclaimer"
-					style="
-						grid-column: 1/-1;
-						margin-top: 20px;
-						padding-top: 16px;
-						border-top: 1px solid rgba(255, 255, 255, 0.08);
-						text-align: center;
-						font-size: clamp(0.5rem, 0.6vw, 0.65rem);
-						color: rgba(255, 255, 255, 0.4);
-						line-height: 1.6;
-						max-width: 800px;
-						margin-left: auto;
-						margin-right: auto;
-					"
-				>
-					<strong style="color: rgba(255, 255, 255, 0.5)"
-						>⚠️ Please consume responsibly.</strong
-					>
-					Kava can interact with medications, alcohol, or other substances. If
-					you are pregnant, breastfeeding, taking medication, or have a medical
-					condition, consult your healthcare provider before consuming kava. Do
-					not drive or operate machinery if you feel impaired.<br />
-					<span style="display: inline-block; margin-top: 2px"
-						>For adults 18+.</span
-					>
-				</div>
-
-				<div class="footer-copy">
-					&copy; 2026 The Kava Corner — Rooted in Wellness.
-				</div>
-			</div>
-		</footer>
-
-		<script src="script.js"></script>
 	</body>
 </html>
