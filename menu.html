@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>The Kava Corner · Menu</title>
-  <meta name="description" content="Explore our menu of premium noble kava drinks, shots, powders, and specialty blends. Find your perfect calm at The Kava Corner." />
+  <meta name="description" content="Explore our menu of premium noble kava drinks, refreshers, botanical teas, acai bowls, coffee and more at The Kava Corner." />
   <link rel="canonical" href="https://www.thekavacorner.com/menu.html" />
   <link rel="icon" type="image/png" sizes="32x32" href="images/flowerlogo.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="images/flowerlogo.png" />
@@ -47,18 +47,40 @@
     .menu-premium-badge.limited { background:#D4AF37; }
     .menu-premium-badge.premium { background:linear-gradient(135deg,#D4AF37,#E882B5); }
     .menu-premium-badge.popular { background:#4FA392; }
+    .menu-premium-badge.new { background:#E882B5; }
+    .menu-premium-badge.energy { background:#4FA392; }
+    .menu-premium-badge.social { background:#E882B5; }
+    .menu-premium-badge.calm { background:#7ECFC0; color:#0F2A22; }
     .menu-premium-item-content { padding:clamp(14px,2vw,24px) clamp(14px,2vw,20px) clamp(14px,2vw,20px) 0; display:flex; flex-direction:column; justify-content:center; }
     .menu-item-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
     .menu-item-header h3 { font-family:'Oswald',sans-serif; font-size:clamp(1rem,1.4vw,1.3rem); font-weight:600; color:#1A1A1A; margin:0; }
     .menu-item-price { font-family:'Oswald',sans-serif; font-size:clamp(1rem,1.3vw,1.2rem); font-weight:700; color:#0F2A22; white-space:nowrap; }
     .menu-item-price s { color:#bbb; font-weight:400; font-size:0.85em; margin-right:4px; }
+    .menu-item-mood { display:flex; align-items:center; gap:6px; margin-bottom:4px; flex-wrap:wrap; }
+    .menu-item-mood .mood-icon { font-size:clamp(0.7rem,0.9vw,0.9rem); }
+    .menu-item-mood .mood-label { font-size:clamp(0.55rem,0.65vw,0.65rem); color:#888; font-weight:500; text-transform:uppercase; letter-spacing:0.5px; }
     .menu-item-origin { display:flex; align-items:center; gap:4px; font-size:clamp(0.6rem,0.7vw,0.7rem); color:#E882B5; font-weight:500; margin-bottom:6px; }
     .menu-item-origin i { font-size:clamp(0.5rem,0.6vw,0.6rem); }
     .menu-item-description p { font-size:clamp(0.75rem,0.9vw,0.9rem); color:#666; line-height:1.4; margin:0; }
+    .menu-item-ingredients { font-size:clamp(0.65rem,0.8vw,0.8rem); color:#888; margin-top:4px; font-style:italic; }
+    .menu-item-moods { display:flex; gap:6px; margin-top:6px; flex-wrap:wrap; }
+    .menu-item-moods .mood-tag { display:inline-flex; align-items:center; gap:4px; font-size:clamp(0.5rem,0.6vw,0.6rem); padding:2px 10px; border-radius:20px; font-weight:600; text-transform:uppercase; letter-spacing:0.3px; }
+    .mood-tag.energy { background:#4FA392; color:#fff; }
+    .mood-tag.social { background:#E882B5; color:#fff; }
+    .mood-tag.calm { background:#7ECFC0; color:#0F2A22; }
     @media (max-width:600px) { .menu-premium-item { grid-template-columns:1fr; } .menu-premium-item-image { aspect-ratio:16/9; } .menu-premium-item-content { padding:clamp(12px,2vw,16px); } .menu-category-premium-header { flex-wrap:wrap; } .category-line { display:none; } }
     @media (min-width:768px) { .menu-premium-grid { grid-template-columns:1fr 1fr; } }
     .under-construction { background:#E882B5; color:#fff; text-align:center; padding:clamp(10px,2vh,20px) clamp(16px,4vw,32px); font-weight:600; font-size:clamp(0.85rem,1.2vw,1.1rem); letter-spacing:0.5px; border-bottom:3px solid #D4AF37; }
     .under-construction i { margin-right:10px; }
+
+    /* Good Vibes Footer */
+    .good-vibes-footer { display:grid; grid-template-columns:1fr 1fr 1fr; gap:clamp(20px,3vw,40px); margin-top:clamp(40px,6vh,60px); padding:clamp(30px,5vw,50px); background:linear-gradient(135deg,#0F2A22,#4FA392); border-radius:clamp(20px,4vw,32px); color:#fff; text-align:center; }
+    .good-vibes-footer .vibe-item { display:flex; flex-direction:column; align-items:center; gap:8px; }
+    .good-vibes-footer .vibe-item .vibe-icon { font-size:clamp(2.5rem,5vw,4rem); }
+    .good-vibes-footer .vibe-item h3 { font-family:'Oswald',sans-serif; font-size:clamp(1.2rem,2vw,1.6rem); font-weight:700; color:#fff; margin:0; letter-spacing:1px; }
+    .good-vibes-footer .vibe-item p { font-size:clamp(0.8rem,1vw,1rem); opacity:0.85; margin:0; }
+    .good-vibes-footer .vibe-divider { width:40px; height:3px; background:#E882B5; border-radius:10px; margin:4px auto; }
+    @media (max-width:768px) { .good-vibes-footer { grid-template-columns:1fr; gap:clamp(24px,3vh,36px); } }
   </style>
 </head>
 <body>
@@ -76,54 +98,100 @@
 
   <section class="menu-hero" aria-label="Menu banner">
     <div class="float-shapes"><div class="shape"></div><div class="shape"></div></div>
-    <div class="container menu-hero-content"><h1>Our <span>Menu</span></h1><p>Explore our curated selection of premium noble kava. Each sip is crafted with care.</p></div>
+    <div class="container menu-hero-content"><h1>Our <span>Menu</span></h1><p>Traditional. Smooth. Island-grown. Explore our curated selection.</p></div>
   </section>
 
   <section class="menu-premium-section">
     <div class="container">
-      <!-- Category: Kava Shots -->
+      <!-- KAVA DRINKS -->
       <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🥤</span></div><div class="category-title-group"><h2>Kava Shots</h2><div class="category-subtitle">Quick. Smooth. Calming.</div></div><div class="category-line"></div></div>
+        <div class="menu-category-premium-header"><div class="category-icon"><span>🥤</span></div><div class="category-title-group"><h2>Kava Drinks</h2><div class="category-subtitle">Traditional. Smooth. Island-grown.</div></div><div class="category-line"></div></div>
         <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/drink2.jpg" alt="Kava Shot" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Kava Shot</h3><span class="menu-item-price">$12.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Fiji</span></div><div class="menu-item-description"><p>Smooth and calming. Perfect for a quick reset.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/drink3.jpg" alt="Kava Tea Blend" loading="lazy" /><span class="menu-premium-badge limited">Limited</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Kava Tea Blend</h3><span class="menu-item-price">$14.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Hawaii</span></div><div class="menu-item-description"><p>A warm, soothing blend for evening relaxation.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/islandshell.jpg" alt="Island Shell" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Island Shell</h3><span class="menu-item-price">$10.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL · CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div><div class="menu-item-description"><p>Pineapple, coconut, vanilla, agave</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/cococalm.jpg" alt="Coco Calm" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Coco Calm</h3><span class="menu-item-price">$10.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Island</span></div><div class="menu-item-description"><p>Coconut, lime, agave</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/mangoguavasplash.jpg" alt="Mango Guava Splash" loading="lazy" /><span class="menu-premium-badge new">New</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Mango Guava Splash</h3><span class="menu-item-price">$12.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div><div class="menu-item-description"><p>Mango, guava, pineapple, lime, agave</p></div></div></div>
+        </div>
+        <div style="margin-top:16px; text-align:center; font-size:clamp(0.7rem,0.8vw,0.85rem); color:#999; padding:12px; background:rgba(232,130,181,0.05); border-radius:16px; border:1px dashed rgba(232,130,181,0.2);">
+          <strong>Add-Ons:</strong> Extra Kava Shot · Protein · <em>Ask about seasonal specials!</em>
         </div>
       </div>
 
-      <!-- Category: Powders -->
+      <!-- REFRESHERS & MOCKTAILS -->
       <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🌿</span></div><div class="category-title-group"><h2>Kava Powders</h2><div class="category-subtitle">Traditional. Pure. Premium.</div></div><div class="category-line"></div></div>
+        <div class="menu-category-premium-header"><div class="category-icon"><span>🍹</span></div><div class="category-title-group"><h2>Refreshers &amp; Mocktails</h2><div class="category-subtitle">Bright, fruity &amp; refreshing.</div></div><div class="category-line"></div></div>
         <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/drink4.jpg" alt="Noble Powder" loading="lazy" /><span class="menu-premium-badge best-seller">Best Seller</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Noble Powder</h3><span class="menu-item-price">$28.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Vanuatu</span></div><div class="menu-item-description"><p>Premium noble kava powder. Traditional and pure.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/drink5.jpg" alt="Vanuatu Reserve" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Vanuatu Reserve</h3><span class="menu-item-price"><s>$35.00</s> $29.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Vanuatu</span></div><div class="menu-item-description"><p>Premium reserve blend for the ultimate calm.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/lululemonade.jpg" alt="Lulu Lemonade" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Lulu Lemonade</h3><span class="menu-item-price">$9.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Lemon, sparkling water, agave, butterfly pea flower tea</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/bubbabreeze.jpg" alt="Bubba Breeze" loading="lazy" /><span class="menu-premium-badge">New</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Bubba Breeze</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div><div class="menu-item-description"><p>Pineapple, mango puree, hibiscus tea</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/smileymiley.jpg" alt="Smiley Miley" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Smiley Miley</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Berry</span></div><div class="menu-item-description"><p>Organic strawberry syrup, lemon juice, water, agave</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/hawaiianlai.jpg" alt="Hawaiian Lai" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Hawaiian Lai</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Island</span></div><div class="menu-item-description"><p>Pineapple juice, mango juice, guava juice</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/amberglow.jpg" alt="Amber Glow" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Amber Glow</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Citrus</span></div><div class="menu-item-description"><p>Orange juice, raspberry organic syrup, sparkling water</p></div></div></div>
         </div>
       </div>
 
-      <!-- Category: Ready-to-Drink -->
+      <!-- BOTANICAL TEA -->
       <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🧉</span></div><div class="category-title-group"><h2>Ready-to-Drink</h2><div class="category-subtitle">Convenient. Delicious. On-the-go.</div></div><div class="category-line"></div></div>
+        <div class="menu-category-premium-header"><div class="category-icon"><span>🍵</span></div><div class="category-title-group"><h2>Botanical Tea</h2><div class="category-subtitle">Plant power. Balanced.</div></div><div class="category-line"></div></div>
         <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/drink2.jpg" alt="Ready-to-Drink" loading="lazy" /><span class="menu-premium-badge">New</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Ready-to-Drink</h3><span class="menu-item-price"><s>$22.00</s> $18.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Samoa</span></div><div class="menu-item-description"><p>Convenient and delicious. Perfect on the go.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/drink3.jpg" alt="Tropical Kava" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Tropical Kava</h3><span class="menu-item-price"><s>$32.00</s> $26.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tonga</span></div><div class="menu-item-description"><p>A tropical twist on traditional kava.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/energytea.jpg" alt="Energy Tea" loading="lazy" /><span class="menu-premium-badge energy">Energy</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Energy Tea</h3><span class="menu-item-price">$6.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Crisp, uplifting, and naturally energizing.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/hibiscustea.jpg" alt="Hibiscus Tea" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Hibiscus Tea</h3><span class="menu-item-price">$6.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Tart, floral, and antioxidant rich.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/butterflytea.jpg" alt="Butterfly Pea Flower Tea" loading="lazy" /><span class="menu-premium-badge calm">Calming</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Butterfly Pea Flower Tea</h3><span class="menu-item-price">$6.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Floral, earthy, and calming.</p></div></div></div>
         </div>
       </div>
 
-      <!-- Specialty Blends -->
+      <!-- ACAI BOWLS -->
       <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🍹</span></div><div class="category-title-group"><h2>Specialty Blends</h2><div class="category-subtitle">Handcrafted. Bold. Uniquely Calming.</div></div><div class="category-line"></div></div>
+        <div class="menu-category-premium-header"><div class="category-icon"><span>🥣</span></div><div class="category-title-group"><h2>Acai Bowls</h2><div class="category-subtitle">Nourishing. Delicious. Naturally energizing.</div></div><div class="category-line"></div></div>
         <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/mangoguavasplash.jpg" alt="Mango Guava Splash" loading="lazy" /><span class="menu-premium-badge">New</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Mango Guava Splash</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical Blend</span></div><div class="menu-item-description"><p>A tropical blend of mango, guava, lime and kava. Sweet, tangy, and perfectly calming.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/orangesunrise.jpg" alt="Orange Sunrise" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Orange Sunrise</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Citrus Blend</span></div><div class="menu-item-description"><p>Bright, citrusy and refreshing with orange, peach and lime. A perfect morning pick-me-up.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/honeylemonbreeze.jpg" alt="Honey Lemon Breeze" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Honey Lemon Breeze</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical Blend</span></div><div class="menu-item-description"><p>Light, floral and sparkling with lemon and lavender honey. A soothing sip for any time of day.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/buiabowl.jpg" alt="Buia Bowl" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Buia Bowl</h3><span class="menu-item-price">$10.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Acai</span></div><div class="menu-item-description"><p>Base, strawberry, banana, blueberry, granola, nutella</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/locoforcoco.jpg" alt="Loco for Coco" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Loco for Coco</h3><span class="menu-item-price">$11.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Acai</span></div><div class="menu-item-description"><p>Base, coconut flakes, chocolate chips, banana, honey</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/superbowl.jpg" alt="Super Bowl" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Super Bowl</h3><span class="menu-item-price">$11.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Acai</span></div><div class="menu-item-description"><p>Base, banana, mango, goji berries, coconut, agave</p></div></div></div>
         </div>
       </div>
+
+      <!-- COFFEE & MORE -->
+      <div class="menu-category-premium reveal">
+        <div class="menu-category-premium-header"><div class="category-icon"><span>☕</span></div><div class="category-title-group"><h2>Coffee &amp; More</h2><div class="category-subtitle">Freshly Ground. Locally Loved.</div></div><div class="category-line"></div></div>
+        <div class="menu-premium-grid">
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/houseblend.jpg" alt="House Blend" loading="lazy" /><span class="menu-premium-badge">Classic</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>House Blend</h3><span class="menu-item-price">$3.75</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Signature</span></div><div class="menu-item-description"><p>Smooth &amp; balanced caramel notes.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/italianblend.jpg" alt="Italian Blend" loading="lazy" /><span class="menu-premium-badge">Bold</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Italian Blend</h3><span class="menu-item-price">$4.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Signature</span></div><div class="menu-item-description"><p>Bold with a rich, creamy finish.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/coldbrew.jpg" alt="Cold Brew" loading="lazy" /><span class="menu-premium-badge">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Cold Brew</h3><span class="menu-item-price">$5.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Small Batch</span></div><div class="menu-item-description"><p>Locally brewed in small batches for bold, clean flavor.</p></div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/mushroomcoffee.jpg" alt="Mushroom Coffee" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Mushroom Coffee</h3><span class="menu-item-price">$6.50</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM · FOCUS</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Functional</span></div><div class="menu-item-description"><p>Freshly ground coffee blended with functional mushrooms for focus, calm &amp; immunity.</p></div><div class="menu-item-ingredients">Lion's Mane · Chaga · Cordyceps</div></div></div>
+          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/yogurtmuffins.jpg" alt="Yogurt Muffins" loading="lazy" /><span class="menu-premium-badge">Fresh</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Yogurt Muffins</h3><span class="menu-item-price">$4.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Bakery</span></div><div class="menu-item-description"><p>Moist, lightly sweet, and made with real yogurt.</p></div></div></div>
+        </div>
+        <div style="margin-top:12px; text-align:center; font-size:clamp(0.6rem,0.7vw,0.7rem); color:#999; font-style:italic;">
+          Made with freshly ground beans.
+        </div>
+      </div>
+
+      <!-- GOOD VIBES · GOOD FOOD · GOOD PEOPLE -->
+      <div class="good-vibes-footer reveal">
+        <div class="vibe-item">
+          <div class="vibe-icon">🌺</div>
+          <h3>Good Vibes</h3>
+          <div class="vibe-divider"></div>
+          <p>Positive energy flows through every cup. Feel the aloha.</p>
+        </div>
+        <div class="vibe-item">
+          <div class="vibe-icon">🥗</div>
+          <h3>Good Food</h3>
+          <div class="vibe-divider"></div>
+          <p>Nourishing ingredients sourced with care for your wellbeing.</p>
+        </div>
+        <div class="vibe-item">
+          <div class="vibe-icon">🤝</div>
+          <h3>Good People</h3>
+          <div class="vibe-divider"></div>
+          <p>Community is at our heart. Come as you are, leave with a smile.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <footer>
     <div class="container footer-inner">
       <div class="footer-logo"><span class="the">The</span><span class="kava">KAVA</span><span class="corner">Corner</span><p class="footer-tagline">Find Your Corner.</p><div class="social-icons"><a href="https://www.instagram.com/thekavacorner/" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
-      <div class="footer-links"><h4>Shop</h4><a href="menu.html">Kava Shots</a><a href="menu.html">Powders</a><a href="menu.html">Ready-to-Drink</a><a href="menu.html">Bundles</a></div>
+      <div class="footer-links"><h4>Shop</h4><a href="menu.html">Kava Drinks</a><a href="menu.html">Refreshers</a><a href="menu.html">Acai Bowls</a><a href="menu.html">Coffee</a></div>
       <div class="footer-links"><h4>Support</h4><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
       <div class="footer-copy">&copy; 2026 The Kava Corner — crafted with calm &amp; color.</div>
     </div>

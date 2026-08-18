@@ -130,7 +130,6 @@
         }, { passive: true });
 
         track.addEventListener('touchmove', function(e) {
-            // prevent vertical scroll while swiping horizontally
             if (isSwiping) {
                 e.preventDefault();
             }
@@ -140,13 +139,10 @@
             if (!isSwiping) return;
             touchEndX = e.changedTouches[0].screenX;
             const diff = touchStartX - touchEndX;
-            // threshold: 50px for a swipe
             if (Math.abs(diff) > 50) {
                 if (diff > 0) {
-                    // swipe left → next
                     nextSlide();
                 } else {
-                    // swipe right → prev
                     prevSlide();
                 }
                 resetAutoPlay();
@@ -247,5 +243,5 @@
         }
     });
 
-    console.log('🌸 The Kava Corner — Premium redesign with touch-swipe carousel.');
+    console.log('🌸 The Kava Corner — Premium redesign with full menu.');
 })();

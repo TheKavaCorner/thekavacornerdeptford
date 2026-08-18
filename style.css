@@ -122,6 +122,8 @@ header.scrolled { background:rgba(253,248,244,0.70); box-shadow:0 4px 30px rgba(
 .product-card-premium-image img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s cubic-bezier(0.34,1.56,0.64,1); }
 .product-card-premium:hover .product-card-premium-image img { transform:scale(1.05); }
 .product-badge-premium { position:absolute; top:14px; left:14px; background:#0F2A22; color:#fff; padding:4px 14px; border-radius:40px; font-size:clamp(0.5rem,0.6vw,0.65rem); font-weight:700; text-transform:uppercase; letter-spacing:1px; border:1px solid rgba(255,255,255,0.1); }
+.product-badge-premium.popular { background:#4FA392; }
+.product-badge-premium.premium-badge { background:linear-gradient(135deg,#D4AF37,#E882B5); }
 .product-badge-premium.best-seller { background:linear-gradient(135deg,#E882B5,#D4AF37); }
 .product-card-premium-content { padding:clamp(16px,2vw,24px) clamp(14px,2vw,20px) clamp(14px,1.8vw,20px); }
 .product-meta { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; }
