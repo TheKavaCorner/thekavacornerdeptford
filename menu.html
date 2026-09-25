@@ -1,204 +1,1304 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>The Kava Corner · Menu</title>
-  <meta name="description" content="Explore our menu of premium noble kava drinks, refreshers, botanical teas, acai bowls, coffee and more at The Kava Corner." />
-  <link rel="canonical" href="https://www.thekavacorner.com/menu.html" />
-  <link rel="icon" type="image/png" sizes="32x32" href="images/flowerlogo.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/flowerlogo.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="images/flowerlogo.png" />
-  <meta property="og:title" content="The Kava Corner · Menu" />
-  <meta property="og:description" content="Premium noble kava drinks for your moment of stillness." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Oswald:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .menu-hero { min-height:40vh; display:flex; align-items:center; background:linear-gradient(160deg,#0F2A22 0%,#4FA392 45%,#E882B5 85%,#F5D4E1 100%); position:relative; overflow:hidden; padding:clamp(80px,12vh,140px) 0 clamp(30px,6vh,60px); }
-    .menu-hero .float-shapes { position:absolute; width:100%; height:100%; top:0; left:0; pointer-events:none; overflow:hidden; }
-    .menu-hero .shape { position:absolute; border-radius:50%; background:var(--pink-glow); filter:blur(60px); animation:floatShape 14s infinite alternate ease-in-out; }
-    .menu-hero .shape:nth-child(1) { width:clamp(120px,25vw,350px); height:clamp(120px,25vw,350px); top:-60px; right:-40px; background:rgba(232,130,181,0.3); }
-    .menu-hero .shape:nth-child(2) { width:clamp(100px,18vw,250px); height:clamp(100px,18vw,250px); bottom:20px; left:-30px; background:rgba(79,163,146,0.3); animation-duration:18s; }
-    @keyframes floatShape { 0% { transform:translate(0,0) scale(1); } 100% { transform:translate(30px,-30px) scale(1.1); } }
-    .menu-hero-content { position:relative; z-index:2; text-align:center; width:100%; }
-    .menu-hero-content h1 { font-family:'Oswald',sans-serif; font-size:clamp(2rem,7vw,4.5rem); font-weight:700; line-height:1.1; color:#fff; margin-bottom:clamp(8px,1.5vh,20px); text-shadow:0 4px 20px rgba(0,0,0,0.08); }
-    .menu-hero-content h1 span { background:linear-gradient(135deg,#F5D4E1,#E882B5,#fff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .menu-hero-content p { font-size:clamp(0.9rem,1.4vw,1.2rem); color:rgba(255,255,255,0.9); max-width:520px; margin:0 auto; font-weight:400; }
-    .menu-premium-section { padding:clamp(40px,8vh,80px) 0; background:#FDF8F4; }
-    .menu-category-premium { margin-bottom:clamp(40px,6vh,60px); }
-    .menu-category-premium:last-child { margin-bottom:0; }
-    .menu-category-premium-header { display:flex; align-items:center; gap:clamp(12px,2vw,24px); margin-bottom:clamp(24px,3vh,40px); }
-    .category-icon { font-size:clamp(1.8rem,3vw,2.8rem); flex-shrink:0; }
-    .category-title-group { flex-shrink:0; }
-    .category-title-group h2 { font-family:'Oswald',sans-serif; font-size:clamp(1.4rem,3vw,2.2rem); font-weight:700; color:#0F2A22; margin:0; }
-    .category-title-group .category-subtitle { font-size:clamp(0.7rem,0.9vw,0.9rem); color:#E882B5; font-weight:500; letter-spacing:1px; text-transform:uppercase; }
-    .category-line { flex:1; height:3px; background:linear-gradient(90deg,#E882B5,transparent); border-radius:10px; }
-    .menu-premium-grid { display:grid; grid-template-columns:1fr; gap:clamp(20px,2.5vw,32px); }
-    .menu-premium-item { display:grid; grid-template-columns:clamp(100px,15vw,180px) 1fr; gap:clamp(16px,2vw,28px); background:rgba(255,255,255,0.8); backdrop-filter:blur(8px); border-radius:clamp(20px,4vw,32px); overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.05); border:1px solid rgba(255,255,255,0.3); transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1); }
-    .menu-premium-item:hover { transform:translateY(-4px); box-shadow:0 20px 50px rgba(232,130,181,0.12); border-color:#E882B5; }
-    .menu-premium-item-image { position:relative; overflow:hidden; aspect-ratio:1; }
-    .menu-premium-item-image img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s cubic-bezier(0.34,1.56,0.64,1); }
-    .menu-premium-item:hover .menu-premium-item-image img { transform:scale(1.05); }
-    .menu-premium-badge { position:absolute; top:8px; left:8px; background:#0F2A22; color:#fff; padding:2px 10px; border-radius:40px; font-size:clamp(0.4rem,0.5vw,0.55rem); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; }
-    .menu-premium-badge.best-seller { background:linear-gradient(135deg,#E882B5,#D4AF37); }
-    .menu-premium-badge.limited { background:#D4AF37; }
-    .menu-premium-badge.premium { background:linear-gradient(135deg,#D4AF37,#E882B5); }
-    .menu-premium-badge.popular { background:#4FA392; }
-    .menu-premium-badge.new { background:#E882B5; }
-    .menu-premium-badge.energy { background:#4FA392; }
-    .menu-premium-badge.social { background:#E882B5; }
-    .menu-premium-badge.calm { background:#7ECFC0; color:#0F2A22; }
-    .menu-premium-item-content { padding:clamp(14px,2vw,24px) clamp(14px,2vw,20px) clamp(14px,2vw,20px) 0; display:flex; flex-direction:column; justify-content:center; }
-    .menu-item-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
-    .menu-item-header h3 { font-family:'Oswald',sans-serif; font-size:clamp(1rem,1.4vw,1.3rem); font-weight:600; color:#1A1A1A; margin:0; }
-    .menu-item-price { font-family:'Oswald',sans-serif; font-size:clamp(1rem,1.3vw,1.2rem); font-weight:700; color:#0F2A22; white-space:nowrap; }
-    .menu-item-price s { color:#bbb; font-weight:400; font-size:0.85em; margin-right:4px; }
-    .menu-item-mood { display:flex; align-items:center; gap:6px; margin-bottom:4px; flex-wrap:wrap; }
-    .menu-item-mood .mood-icon { font-size:clamp(0.7rem,0.9vw,0.9rem); }
-    .menu-item-mood .mood-label { font-size:clamp(0.55rem,0.65vw,0.65rem); color:#888; font-weight:500; text-transform:uppercase; letter-spacing:0.5px; }
-    .menu-item-origin { display:flex; align-items:center; gap:4px; font-size:clamp(0.6rem,0.7vw,0.7rem); color:#E882B5; font-weight:500; margin-bottom:6px; }
-    .menu-item-origin i { font-size:clamp(0.5rem,0.6vw,0.6rem); }
-    .menu-item-description p { font-size:clamp(0.75rem,0.9vw,0.9rem); color:#666; line-height:1.4; margin:0; }
-    .menu-item-ingredients { font-size:clamp(0.65rem,0.8vw,0.8rem); color:#888; margin-top:4px; font-style:italic; }
-    .menu-item-moods { display:flex; gap:6px; margin-top:6px; flex-wrap:wrap; }
-    .menu-item-moods .mood-tag { display:inline-flex; align-items:center; gap:4px; font-size:clamp(0.5rem,0.6vw,0.6rem); padding:2px 10px; border-radius:20px; font-weight:600; text-transform:uppercase; letter-spacing:0.3px; }
-    .mood-tag.energy { background:#4FA392; color:#fff; }
-    .mood-tag.social { background:#E882B5; color:#fff; }
-    .mood-tag.calm { background:#7ECFC0; color:#0F2A22; }
-    @media (max-width:600px) { .menu-premium-item { grid-template-columns:1fr; } .menu-premium-item-image { aspect-ratio:16/9; } .menu-premium-item-content { padding:clamp(12px,2vw,16px); } .menu-category-premium-header { flex-wrap:wrap; } .category-line { display:none; } }
-    @media (min-width:768px) { .menu-premium-grid { grid-template-columns:1fr 1fr; } }
-    .under-construction { background:#E882B5; color:#fff; text-align:center; padding:clamp(10px,2vh,20px) clamp(16px,4vw,32px); font-weight:600; font-size:clamp(0.85rem,1.2vw,1.1rem); letter-spacing:0.5px; border-bottom:3px solid #D4AF37; }
-    .under-construction i { margin-right:10px; }
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+		/>
+		<title>The Kava Corner · Menu</title>
+		<meta
+			name="description"
+			content="Explore our menu of premium noble kava drinks, refreshers, botanical teas, acai bowls, coffee and more at The Kava Corner."
+		/>
+		<link rel="canonical" href="https://www.thekavacorner.com/menu.html" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="images/flowerlogo.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="images/flowerlogo.png"
+		/>
+		<link rel="apple-touch-icon" sizes="180x180" href="images/flowerlogo.png" />
+		<meta property="og:title" content="The Kava Corner · Menu" />
+		<meta
+			property="og:description"
+			content="Premium noble kava drinks for your moment of stillness."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Oswald:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			.menu-hero {
+				min-height: 40vh;
+				display: flex;
+				align-items: center;
+				background: linear-gradient(
+					160deg,
+					#0f2a22 0%,
+					#4fa392 45%,
+					#e882b5 85%,
+					#f5d4e1 100%
+				);
+				position: relative;
+				overflow: hidden;
+				padding: clamp(80px, 12vh, 140px) 0 clamp(30px, 6vh, 60px);
+			}
+			.menu-hero .float-shapes {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				pointer-events: none;
+				overflow: hidden;
+			}
+			.menu-hero .shape {
+				position: absolute;
+				border-radius: 50%;
+				background: var(--pink-glow);
+				filter: blur(60px);
+				animation: floatShape 14s infinite alternate ease-in-out;
+			}
+			.menu-hero .shape:nth-child(1) {
+				width: clamp(120px, 25vw, 350px);
+				height: clamp(120px, 25vw, 350px);
+				top: -60px;
+				right: -40px;
+				background: rgba(232, 130, 181, 0.3);
+			}
+			.menu-hero .shape:nth-child(2) {
+				width: clamp(100px, 18vw, 250px);
+				height: clamp(100px, 18vw, 250px);
+				bottom: 20px;
+				left: -30px;
+				background: rgba(79, 163, 146, 0.3);
+				animation-duration: 18s;
+			}
+			@keyframes floatShape {
+				0% {
+					transform: translate(0, 0) scale(1);
+				}
+				100% {
+					transform: translate(30px, -30px) scale(1.1);
+				}
+			}
+			.menu-hero-content {
+				position: relative;
+				z-index: 2;
+				text-align: center;
+				width: 100%;
+			}
+			.menu-hero-content h1 {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(2rem, 7vw, 4.5rem);
+				font-weight: 700;
+				line-height: 1.1;
+				color: #fff;
+				margin-bottom: clamp(8px, 1.5vh, 20px);
+				text-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+			}
+			.menu-hero-content h1 span {
+				background: linear-gradient(135deg, #f5d4e1, #e882b5, #fff);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+			.menu-hero-content p {
+				font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+				color: rgba(255, 255, 255, 0.9);
+				max-width: 520px;
+				margin: 0 auto;
+				font-weight: 400;
+			}
+			.menu-premium-section {
+				padding: clamp(40px, 8vh, 80px) 0;
+				background: #fdf8f4;
+			}
+			.menu-category-premium {
+				margin-bottom: clamp(40px, 6vh, 60px);
+			}
+			.menu-category-premium:last-child {
+				margin-bottom: 0;
+			}
+			.menu-category-premium-header {
+				display: flex;
+				align-items: center;
+				gap: clamp(12px, 2vw, 24px);
+				margin-bottom: clamp(24px, 3vh, 40px);
+			}
+			.category-icon {
+				font-size: clamp(1.8rem, 3vw, 2.8rem);
+				flex-shrink: 0;
+			}
+			.category-title-group {
+				flex-shrink: 0;
+			}
+			.category-title-group h2 {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(1.4rem, 3vw, 2.2rem);
+				font-weight: 700;
+				color: #0f2a22;
+				margin: 0;
+			}
+			.category-title-group .category-subtitle {
+				font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+				color: #e882b5;
+				font-weight: 500;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+			.category-line {
+				flex: 1;
+				height: 3px;
+				background: linear-gradient(90deg, #e882b5, transparent);
+				border-radius: 10px;
+			}
+			.menu-premium-grid {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: clamp(20px, 2.5vw, 32px);
+			}
+			.menu-premium-item {
+				display: grid;
+				grid-template-columns: clamp(100px, 15vw, 180px) 1fr;
+				gap: clamp(16px, 2vw, 28px);
+				background: rgba(255, 255, 255, 0.8);
+				backdrop-filter: blur(8px);
+				border-radius: clamp(20px, 4vw, 32px);
+				overflow: hidden;
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+			}
+			.menu-premium-item:hover {
+				transform: translateY(-4px);
+				box-shadow: 0 20px 50px rgba(232, 130, 181, 0.12);
+				border-color: #e882b5;
+			}
+			.menu-premium-item-image {
+				position: relative;
+				overflow: hidden;
+				aspect-ratio: 1;
+			}
+			.menu-premium-item-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+			}
+			.menu-premium-item:hover .menu-premium-item-image img {
+				transform: scale(1.05);
+			}
+			.menu-premium-badge {
+				position: absolute;
+				top: 8px;
+				left: 8px;
+				background: #0f2a22;
+				color: #fff;
+				padding: 2px 10px;
+				border-radius: 40px;
+				font-size: clamp(0.4rem, 0.5vw, 0.55rem);
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+			.menu-premium-badge.best-seller {
+				background: linear-gradient(135deg, #e882b5, #d4af37);
+			}
+			.menu-premium-badge.limited {
+				background: #d4af37;
+			}
+			.menu-premium-badge.premium {
+				background: linear-gradient(135deg, #d4af37, #e882b5);
+			}
+			.menu-premium-badge.popular {
+				background: #4fa392;
+			}
+			.menu-premium-badge.new {
+				background: #e882b5;
+			}
+			.menu-premium-badge.energy {
+				background: #4fa392;
+			}
+			.menu-premium-badge.social {
+				background: #e882b5;
+			}
+			.menu-premium-badge.calm {
+				background: #7ecfc0;
+				color: #0f2a22;
+			}
+			.menu-premium-badge.nitro {
+				background: linear-gradient(135deg, #0f2a22, #4fa392);
+			}
+			.menu-premium-item-content {
+				padding: clamp(14px, 2vw, 24px) clamp(14px, 2vw, 20px)
+					clamp(14px, 2vw, 20px) 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			.menu-item-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 4px;
+			}
+			.menu-item-header h3 {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(1rem, 1.4vw, 1.3rem);
+				font-weight: 600;
+				color: #1a1a1a;
+				margin: 0;
+			}
+			.menu-item-price {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(1rem, 1.3vw, 1.2rem);
+				font-weight: 700;
+				color: #0f2a22;
+				white-space: nowrap;
+			}
+			.menu-item-price s {
+				color: #bbb;
+				font-weight: 400;
+				font-size: 0.85em;
+				margin-right: 4px;
+			}
+			.menu-item-mood {
+				display: flex;
+				align-items: center;
+				gap: 6px;
+				margin-bottom: 4px;
+				flex-wrap: wrap;
+			}
+			.menu-item-mood .mood-icon {
+				font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+			}
+			.menu-item-mood .mood-label {
+				font-size: clamp(0.55rem, 0.65vw, 0.65rem);
+				color: #888;
+				font-weight: 500;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+			.menu-item-origin {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+				font-size: clamp(0.6rem, 0.7vw, 0.7rem);
+				color: #e882b5;
+				font-weight: 500;
+				margin-bottom: 6px;
+			}
+			.menu-item-origin i {
+				font-size: clamp(0.5rem, 0.6vw, 0.6rem);
+			}
+			.menu-item-description p {
+				font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+				color: #666;
+				line-height: 1.4;
+				margin: 0;
+			}
+			.menu-item-ingredients {
+				font-size: clamp(0.65rem, 0.8vw, 0.8rem);
+				color: #888;
+				margin-top: 4px;
+				font-style: italic;
+			}
+			.menu-item-moods {
+				display: flex;
+				gap: 6px;
+				margin-top: 6px;
+				flex-wrap: wrap;
+			}
+			.menu-item-moods .mood-tag {
+				display: inline-flex;
+				align-items: center;
+				gap: 4px;
+				font-size: clamp(0.5rem, 0.6vw, 0.6rem);
+				padding: 2px 10px;
+				border-radius: 20px;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.3px;
+			}
+			.mood-tag.energy {
+				background: #4fa392;
+				color: #fff;
+			}
+			.mood-tag.social {
+				background: #e882b5;
+				color: #fff;
+			}
+			.mood-tag.calm {
+				background: #7ecfc0;
+				color: #0f2a22;
+			}
+			@media (max-width: 600px) {
+				.menu-premium-item {
+					grid-template-columns: 1fr;
+				}
+				.menu-premium-item-image {
+					aspect-ratio: 16/9;
+				}
+				.menu-premium-item-content {
+					padding: clamp(12px, 2vw, 16px);
+				}
+				.menu-category-premium-header {
+					flex-wrap: wrap;
+				}
+				.category-line {
+					display: none;
+				}
+			}
+			@media (min-width: 768px) {
+				.menu-premium-grid {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+			.under-construction {
+				background: #e882b5;
+				color: #fff;
+				text-align: center;
+				padding: clamp(10px, 2vh, 20px) clamp(16px, 4vw, 32px);
+				font-weight: 600;
+				font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+				letter-spacing: 0.5px;
+				border-bottom: 3px solid #d4af37;
+			}
+			.under-construction i {
+				margin-right: 10px;
+			}
 
-    /* Good Vibes Footer */
-    .good-vibes-footer { display:grid; grid-template-columns:1fr 1fr 1fr; gap:clamp(20px,3vw,40px); margin-top:clamp(40px,6vh,60px); padding:clamp(30px,5vw,50px); background:linear-gradient(135deg,#0F2A22,#4FA392); border-radius:clamp(20px,4vw,32px); color:#fff; text-align:center; }
-    .good-vibes-footer .vibe-item { display:flex; flex-direction:column; align-items:center; gap:8px; }
-    .good-vibes-footer .vibe-item .vibe-icon { font-size:clamp(2.5rem,5vw,4rem); }
-    .good-vibes-footer .vibe-item h3 { font-family:'Oswald',sans-serif; font-size:clamp(1.2rem,2vw,1.6rem); font-weight:700; color:#fff; margin:0; letter-spacing:1px; }
-    .good-vibes-footer .vibe-item p { font-size:clamp(0.8rem,1vw,1rem); opacity:0.85; margin:0; }
-    .good-vibes-footer .vibe-divider { width:40px; height:3px; background:#E882B5; border-radius:10px; margin:4px auto; }
-    @media (max-width:768px) { .good-vibes-footer { grid-template-columns:1fr; gap:clamp(24px,3vh,36px); } }
-  </style>
-</head>
-<body>
-  <div class="under-construction"><i class="fas fa-hard-hat"></i> We're building something beautiful — our website is currently under construction. Stay tuned! <i class="fas fa-heart" style="color:#D4AF37;margin-left:6px;"></i></div>
+			/* Nitro Cold Brew Spotlight */
+			.nitro-spotlight {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: clamp(24px, 4vw, 50px);
+				align-items: center;
+				background: linear-gradient(135deg, #0f2a22, #1a4a3a);
+				border-radius: clamp(20px, 4vw, 32px);
+				padding: clamp(28px, 5vw, 50px);
+				margin-bottom: clamp(40px, 6vh, 60px);
+				border: 2px solid rgba(232, 130, 181, 0.25);
+				position: relative;
+				overflow: hidden;
+			}
+			.nitro-spotlight::before {
+				content: "";
+				position: absolute;
+				top: -50%;
+				right: -20%;
+				width: 400px;
+				height: 400px;
+				background: radial-gradient(
+					circle,
+					rgba(232, 130, 181, 0.15),
+					transparent 70%
+				);
+				border-radius: 50%;
+				pointer-events: none;
+			}
+			.nitro-spotlight-content {
+				position: relative;
+				z-index: 2;
+			}
+			.nitro-spotlight-content .nitro-badge {
+				display: inline-block;
+				background: rgba(232, 130, 181, 0.2);
+				border: 1px solid rgba(232, 130, 181, 0.4);
+				color: #f5d4e1;
+				padding: 4px 16px;
+				border-radius: 40px;
+				font-size: clamp(0.6rem, 0.7vw, 0.75rem);
+				font-weight: 700;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				margin-bottom: clamp(10px, 1.5vh, 16px);
+			}
+			.nitro-spotlight-content h2 {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(1.8rem, 4vw, 3rem);
+				font-weight: 700;
+				color: #fff;
+				line-height: 1.1;
+				margin-bottom: clamp(10px, 1.5vh, 16px);
+			}
+			.nitro-spotlight-content h2 span {
+				background: linear-gradient(135deg, #f5d4e1, #e882b5, #d4af37);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+			.nitro-spotlight-content p {
+				font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+				color: rgba(255, 255, 255, 0.8);
+				line-height: 1.7;
+				margin-bottom: clamp(16px, 2vh, 24px);
+				max-width: 480px;
+			}
+			.nitro-spotlight-content .nitro-features {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px 12px;
+				margin-bottom: clamp(16px, 2vh, 24px);
+			}
+			.nitro-spotlight-content .nitro-features span {
+				background: rgba(255, 255, 255, 0.08);
+				border: 1px solid rgba(255, 255, 255, 0.12);
+				color: rgba(255, 255, 255, 0.85);
+				padding: 4px 14px;
+				border-radius: 40px;
+				font-size: clamp(0.6rem, 0.75vw, 0.8rem);
+				font-weight: 500;
+			}
+			.nitro-spotlight-content .btn-premium-primary {
+				display: inline-flex;
+				align-items: center;
+				gap: 12px;
+				background: rgba(255, 255, 255, 0.95);
+				color: #0f2a22;
+				padding: clamp(12px, 1.8vw, 18px) clamp(24px, 3.5vw, 40px);
+				border-radius: 60px;
+				font-weight: 600;
+				text-decoration: none;
+				transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+				font-size: clamp(0.85rem, 1vw, 1rem);
+				box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+			}
+			.nitro-spotlight-content .btn-premium-primary:hover {
+				background: #e882b5;
+				color: #fff;
+				transform: translateY(-3px);
+				box-shadow: 0 24px 50px rgba(232, 130, 181, 0.35);
+			}
+			.nitro-spotlight-image {
+				position: relative;
+				z-index: 2;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.nitro-spotlight-image img {
+				width: 100%;
+				max-width: 420px;
+				aspect-ratio: 1/1.1;
+				object-fit: cover;
+				border-radius: 32px 8px 32px 8px;
+				border: 4px solid rgba(232, 130, 181, 0.3);
+				box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+				transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+			}
+			.nitro-spotlight-image img:hover {
+				transform: scale(1.03) rotate(-1deg);
+			}
+			@media (max-width: 768px) {
+				.nitro-spotlight {
+					grid-template-columns: 1fr;
+					text-align: center;
+				}
+				.nitro-spotlight-content p {
+					margin-left: auto;
+					margin-right: auto;
+				}
+				.nitro-spotlight-content .nitro-features {
+					justify-content: center;
+				}
+				.nitro-spotlight-image {
+					order: -1;
+				}
+				.nitro-spotlight-image img {
+					max-width: 320px;
+				}
+			}
 
-  <header id="mainHeader">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="logo" aria-label="The Kava Corner home">
-        <span class="logo-icon"><svg viewBox="0 0 100 100"><path d="M50 10 L20 40 L30 60 L50 90 L70 60 L80 40 L50 10 Z" fill="none" stroke="#E882B5" stroke-width="4"/><circle cx="50" cy="50" r="8" fill="#E882B5"/></svg></span>
-        <span class="logo-text"><span class="the">The</span><span class="kava">KAVA</span><span class="corner">Corner</span></span>
-      </a>
-      <nav class="nav-links" aria-label="Main navigation"><a href="location.html">Location</a><a href="menu.html" class="active">Menu</a></nav>
-    </div>
-  </header>
+			/* Good Vibes Footer */
+			.good-vibes-footer {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: clamp(20px, 3vw, 40px);
+				margin-top: clamp(40px, 6vh, 60px);
+				padding: clamp(30px, 5vw, 50px);
+				background: linear-gradient(135deg, #0f2a22, #4fa392);
+				border-radius: clamp(20px, 4vw, 32px);
+				color: #fff;
+				text-align: center;
+			}
+			.good-vibes-footer .vibe-item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 8px;
+			}
+			.good-vibes-footer .vibe-item .vibe-icon {
+				font-size: clamp(2.5rem, 5vw, 4rem);
+			}
+			.good-vibes-footer .vibe-item h3 {
+				font-family: "Oswald", sans-serif;
+				font-size: clamp(1.2rem, 2vw, 1.6rem);
+				font-weight: 700;
+				color: #fff;
+				margin: 0;
+				letter-spacing: 1px;
+			}
+			.good-vibes-footer .vibe-item p {
+				font-size: clamp(0.8rem, 1vw, 1rem);
+				opacity: 0.85;
+				margin: 0;
+			}
+			.good-vibes-footer .vibe-divider {
+				width: 40px;
+				height: 3px;
+				background: #e882b5;
+				border-radius: 10px;
+				margin: 4px auto;
+			}
+			@media (max-width: 768px) {
+				.good-vibes-footer {
+					grid-template-columns: 1fr;
+					gap: clamp(24px, 3vh, 36px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="under-construction">
+			<i class="fas fa-hard-hat"></i> We're building something beautiful — our
+			website is currently under construction. Stay tuned!
+			<i class="fas fa-heart" style="color: #d4af37; margin-left: 6px"></i>
+		</div>
 
-  <section class="menu-hero" aria-label="Menu banner">
-    <div class="float-shapes"><div class="shape"></div><div class="shape"></div></div>
-    <div class="container menu-hero-content"><h1>Our <span>Menu</span></h1><p>Traditional. Smooth. Island-grown. Explore our curated selection.</p></div>
-  </section>
+		<header id="mainHeader">
+			<div class="container nav-wrapper">
+				<a href="index.html" class="logo" aria-label="The Kava Corner home">
+					<span class="logo-icon"
+						><svg viewBox="0 0 100 100">
+							<path
+								d="M50 10 L20 40 L30 60 L50 90 L70 60 L80 40 L50 10 Z"
+								fill="none"
+								stroke="#E882B5"
+								stroke-width="4"
+							/>
+							<circle cx="50" cy="50" r="8" fill="#E882B5" /></svg
+					></span>
+					<span class="logo-text"
+						><span class="the">The</span><span class="kava">KAVA</span
+						><span class="corner">Corner</span></span
+					>
+				</a>
+				<nav class="nav-links" aria-label="Main navigation">
+					<a href="location.html">Location</a
+					><a href="menu.html" class="active">Menu</a>
+				</nav>
+			</div>
+		</header>
 
-  <section class="menu-premium-section">
-    <div class="container">
-      <!-- KAVA DRINKS -->
-      <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🥤</span></div><div class="category-title-group"><h2>Kava Drinks</h2><div class="category-subtitle">Traditional. Smooth. Island-grown.</div></div><div class="category-line"></div></div>
-        <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/islandshell.jpg" alt="Island Shell" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Island Shell</h3><span class="menu-item-price">$10.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL · CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div><div class="menu-item-description"><p>Pineapple, coconut, vanilla, agave</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/cococalm.jpg" alt="Coco Calm" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Coco Calm</h3><span class="menu-item-price">$10.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Island</span></div><div class="menu-item-description"><p>Coconut, lime, agave</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/mangoguavasplash.jpg" alt="Mango Guava Splash" loading="lazy" /><span class="menu-premium-badge new">New</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Mango Guava Splash</h3><span class="menu-item-price">$12.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div><div class="menu-item-description"><p>Mango, guava, pineapple, lime, agave</p></div></div></div>
-        </div>
-        <div style="margin-top:16px; text-align:center; font-size:clamp(0.7rem,0.8vw,0.85rem); color:#999; padding:12px; background:rgba(232,130,181,0.05); border-radius:16px; border:1px dashed rgba(232,130,181,0.2);">
-          <strong>Add-Ons:</strong> Extra Kava Shot · Protein · <em>Ask about seasonal specials!</em>
-        </div>
-      </div>
+		<section class="menu-hero" aria-label="Menu banner">
+			<div class="float-shapes">
+				<div class="shape"></div>
+				<div class="shape"></div>
+			</div>
+			<div class="container menu-hero-content">
+				<h1>Our <span>Menu</span></h1>
+				<p>Traditional. Smooth. Island-grown. Explore our curated selection.</p>
+			</div>
+		</section>
 
-      <!-- REFRESHERS & MOCKTAILS -->
-      <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🍹</span></div><div class="category-title-group"><h2>Refreshers &amp; Mocktails</h2><div class="category-subtitle">Bright, fruity &amp; refreshing.</div></div><div class="category-line"></div></div>
-        <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/lululemonade.jpg" alt="Lulu Lemonade" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Lulu Lemonade</h3><span class="menu-item-price">$9.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Lemon, sparkling water, agave, butterfly pea flower tea</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/bubbabreeze.jpg" alt="Bubba Breeze" loading="lazy" /><span class="menu-premium-badge">New</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Bubba Breeze</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div><div class="menu-item-description"><p>Pineapple, mango puree, hibiscus tea</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/smileymiley.jpg" alt="Smiley Miley" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Smiley Miley</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Berry</span></div><div class="menu-item-description"><p>Organic strawberry syrup, lemon juice, water, agave</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/hawaiianlai.jpg" alt="Hawaiian Lai" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Hawaiian Lai</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Island</span></div><div class="menu-item-description"><p>Pineapple juice, mango juice, guava juice</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/amberglow.jpg" alt="Amber Glow" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Amber Glow</h3><span class="menu-item-price">$8.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Citrus</span></div><div class="menu-item-description"><p>Orange juice, raspberry organic syrup, sparkling water</p></div></div></div>
-        </div>
-      </div>
+		<section class="menu-premium-section">
+			<div class="container">
+				<!-- NITRO COLD BREW SPOTLIGHT -->
+				<div class="nitro-spotlight reveal">
+					<div class="nitro-spotlight-content">
+						<span class="nitro-badge">⚡ Now on Tap</span>
+						<h2>Nitro <span>Cold Brew</span></h2>
+						<p>
+							Slow-steeped for 18 hours, then nitrogen-infused for a velvety,
+							cascading pour. Bold, smooth, and naturally sweet — no cream
+							needed.
+						</p>
+						<div class="nitro-features">
+							<span>🧊 18-Hour Steep</span>
+							<span>💨 Nitrogen-Infused</span>
+							<span>🌿 Small Batch</span>
+							<span>☕ Locally Brewed</span>
+						</div>
+						<a href="#coffee-more" class="btn-premium-primary"
+							><span>See It on the Menu</span><i class="fas fa-arrow-right"></i
+						></a>
+					</div>
+					<div class="nitro-spotlight-image">
+						<img
+							src="images/coldbrew.jpg"
+							alt="Nitro Cold Brew on tap"
+							loading="lazy"
+						/>
+					</div>
+				</div>
 
-      <!-- BOTANICAL TEA -->
-      <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🍵</span></div><div class="category-title-group"><h2>Botanical Tea</h2><div class="category-subtitle">Plant power. Balanced.</div></div><div class="category-line"></div></div>
-        <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/energytea.jpg" alt="Energy Tea" loading="lazy" /><span class="menu-premium-badge energy">Energy</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Energy Tea</h3><span class="menu-item-price">$6.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Crisp, uplifting, and naturally energizing.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/hibiscustea.jpg" alt="Hibiscus Tea" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Hibiscus Tea</h3><span class="menu-item-price">$6.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Tart, floral, and antioxidant rich.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/butterflytea.jpg" alt="Butterfly Pea Flower Tea" loading="lazy" /><span class="menu-premium-badge calm">Calming</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Butterfly Pea Flower Tea</h3><span class="menu-item-price">$6.00</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div><div class="menu-item-description"><p>Floral, earthy, and calming.</p></div></div></div>
-        </div>
-      </div>
+				<!-- KAVA SHELL -->
+				<div class="menu-category-premium reveal">
+					<div class="menu-category-premium-header">
+						<div class="category-icon"><span>🥥</span></div>
+						<div class="category-title-group">
+							<h2>Kava Shell</h2>
+							<div class="category-subtitle">
+								Traditional. Smooth. Island-grown.
+							</div>
+						</div>
+						<div class="category-line"></div>
+					</div>
+					<div class="menu-premium-grid">
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/kavashell.jpg"
+									alt="Kava Shell"
+									loading="lazy"
+								/><span class="menu-premium-badge best-seller"
+									>Corner Favorite</span
+								>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Kava Shell</h3>
+									<span class="menu-item-price">$10.50</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌺</span
+									><span class="mood-label">SOCIAL · CALM</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Traditional</span>
+								</div>
+								<div class="menu-item-description">
+									<p>
+										Our signature noble kava served in a traditional shell.
+										Smooth, earthy, and grounding.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						style="
+							margin-top: 16px;
+							text-align: center;
+							font-size: clamp(0.7rem, 0.8vw, 0.85rem);
+							color: #999;
+							padding: 12px;
+							background: rgba(232, 130, 181, 0.05);
+							border-radius: 16px;
+							border: 1px dashed rgba(232, 130, 181, 0.2);
+						"
+					>
+						<strong>Add-Ons:</strong> Extra Kava Shot · Protein ·
+						<em>Ask about seasonal specials!</em>
+					</div>
+				</div>
 
-      <!-- ACAI BOWLS -->
-      <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>🥣</span></div><div class="category-title-group"><h2>Acai Bowls</h2><div class="category-subtitle">Nourishing. Delicious. Naturally energizing.</div></div><div class="category-line"></div></div>
-        <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/buiabowl.jpg" alt="Buia Bowl" loading="lazy" /><span class="menu-premium-badge">Corner Favorite</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Buia Bowl</h3><span class="menu-item-price">$10.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Acai</span></div><div class="menu-item-description"><p>Base, strawberry, banana, blueberry, granola, nutella</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/locoforcoco.jpg" alt="Loco for Coco" loading="lazy" /><span class="menu-premium-badge popular">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Loco for Coco</h3><span class="menu-item-price">$11.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Acai</span></div><div class="menu-item-description"><p>Base, coconut flakes, chocolate chips, banana, honey</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/superbowl.jpg" alt="Super Bowl" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Super Bowl</h3><span class="menu-item-price">$11.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Acai</span></div><div class="menu-item-description"><p>Base, banana, mango, goji berries, coconut, agave</p></div></div></div>
-        </div>
-      </div>
+				<!-- REFRESHERS & MOCKTAILS -->
+				<div class="menu-category-premium reveal">
+					<div class="menu-category-premium-header">
+						<div class="category-icon"><span>🍹</span></div>
+						<div class="category-title-group">
+							<h2>Refreshers &amp; Mocktails</h2>
+							<div class="category-subtitle">
+								Bright, fruity &amp; refreshing.
+							</div>
+						</div>
+						<div class="category-line"></div>
+					</div>
+					<div class="menu-premium-grid">
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/lululemonade.jpg"
+									alt="Lulu Lemonade"
+									loading="lazy"
+								/><span class="menu-premium-badge premium">Premium</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Lulu Lemonade</h3>
+									<span class="menu-item-price">$9.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Botanical</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Lemon, sparkling water, agave, butterfly pea flower tea</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/bubbabreeze.jpg"
+									alt="Bubba Breeze"
+									loading="lazy"
+								/><span class="menu-premium-badge">New</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Bubba Breeze</h3>
+									<span class="menu-item-price">$8.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌺</span
+									><span class="mood-label">SOCIAL</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Tropical</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Pineapple, mango puree, hibiscus tea</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/smileymiley.jpg"
+									alt="Smiley Miley"
+									loading="lazy"
+								/><span class="menu-premium-badge popular">Popular</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Smiley Miley</h3>
+									<span class="menu-item-price">$8.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Berry</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Organic strawberry syrup, lemon juice, water, agave</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/hawaiianlai.jpg"
+									alt="Hawaiian Lai"
+									loading="lazy"
+								/><span class="menu-premium-badge">Corner Favorite</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Hawaiian Lai</h3>
+									<span class="menu-item-price">$8.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌺</span
+									><span class="mood-label">SOCIAL</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Island</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Pineapple juice, mango juice, guava juice</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/amberglow.jpg"
+									alt="Amber Glow"
+									loading="lazy"
+								/><span class="menu-premium-badge premium">Premium</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Amber Glow</h3>
+									<span class="menu-item-price">$8.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🧘</span
+									><span class="mood-label">CALM</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Citrus</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Orange juice, raspberry organic syrup, sparkling water</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <!-- COFFEE & MORE -->
-      <div class="menu-category-premium reveal">
-        <div class="menu-category-premium-header"><div class="category-icon"><span>☕</span></div><div class="category-title-group"><h2>Coffee &amp; More</h2><div class="category-subtitle">Freshly Ground. Locally Loved.</div></div><div class="category-line"></div></div>
-        <div class="menu-premium-grid">
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/houseblend.jpg" alt="House Blend" loading="lazy" /><span class="menu-premium-badge">Classic</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>House Blend</h3><span class="menu-item-price">$3.75</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Signature</span></div><div class="menu-item-description"><p>Smooth &amp; balanced caramel notes.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/italianblend.jpg" alt="Italian Blend" loading="lazy" /><span class="menu-premium-badge">Bold</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Italian Blend</h3><span class="menu-item-price">$4.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Signature</span></div><div class="menu-item-description"><p>Bold with a rich, creamy finish.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/coldbrew.jpg" alt="Cold Brew" loading="lazy" /><span class="menu-premium-badge">Popular</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Cold Brew</h3><span class="menu-item-price">$5.00</span></div><div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Small Batch</span></div><div class="menu-item-description"><p>Locally brewed in small batches for bold, clean flavor.</p></div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/mushroomcoffee.jpg" alt="Mushroom Coffee" loading="lazy" /><span class="menu-premium-badge premium">Premium</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Mushroom Coffee</h3><span class="menu-item-price">$6.50</span></div><div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM · FOCUS</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Functional</span></div><div class="menu-item-description"><p>Freshly ground coffee blended with functional mushrooms for focus, calm &amp; immunity.</p></div><div class="menu-item-ingredients">Lion's Mane · Chaga · Cordyceps</div></div></div>
-          <div class="menu-premium-item"><div class="menu-premium-item-image"><img src="images/yogurtmuffins.jpg" alt="Yogurt Muffins" loading="lazy" /><span class="menu-premium-badge">Fresh</span></div><div class="menu-premium-item-content"><div class="menu-item-header"><h3>Yogurt Muffins</h3><span class="menu-item-price">$4.50</span></div><div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div><div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Bakery</span></div><div class="menu-item-description"><p>Moist, lightly sweet, and made with real yogurt.</p></div></div></div>
-        </div>
-        <div style="margin-top:12px; text-align:center; font-size:clamp(0.6rem,0.7vw,0.7rem); color:#999; font-style:italic;">
-          Made with freshly ground beans.
-        </div>
-      </div>
+				<!-- BOTANICAL TEA -->
+				<div class="menu-category-premium reveal">
+					<div class="menu-category-premium-header">
+						<div class="category-icon"><span>🍵</span></div>
+						<div class="category-title-group">
+							<h2>Botanical Tea</h2>
+							<div class="category-subtitle">Plant power. Balanced.</div>
+						</div>
+						<div class="category-line"></div>
+					</div>
+					<div class="menu-premium-grid">
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/energytea.jpg"
+									alt="Energy Tea"
+									loading="lazy"
+								/><span class="menu-premium-badge energy">Energy</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Energy Tea</h3>
+									<span class="menu-item-price">$6.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Botanical</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Crisp, uplifting, and naturally energizing.</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/hibiscustea.jpg"
+									alt="Hibiscus Tea"
+									loading="lazy"
+								/><span class="menu-premium-badge popular">Popular</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Hibiscus Tea</h3>
+									<span class="menu-item-price">$6.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🧘</span
+									><span class="mood-label">CALM</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Botanical</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Tart, floral, and antioxidant rich.</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/butterflytea.jpg"
+									alt="Butterfly Pea Flower Tea"
+									loading="lazy"
+								/><span class="menu-premium-badge calm">Calming</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Butterfly Pea Flower Tea</h3>
+									<span class="menu-item-price">$6.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🧘</span
+									><span class="mood-label">CALM</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Botanical</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Floral, earthy, and calming.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-      <!-- GOOD VIBES · GOOD FOOD · GOOD PEOPLE -->
-      <div class="good-vibes-footer reveal">
-        <div class="vibe-item">
-          <div class="vibe-icon">🌺</div>
-          <h3>Good Vibes</h3>
-          <div class="vibe-divider"></div>
-          <p>Positive energy flows through every cup. Feel the aloha.</p>
-        </div>
-        <div class="vibe-item">
-          <div class="vibe-icon">🥗</div>
-          <h3>Good Food</h3>
-          <div class="vibe-divider"></div>
-          <p>Nourishing ingredients sourced with care for your wellbeing.</p>
-        </div>
-        <div class="vibe-item">
-          <div class="vibe-icon">🤝</div>
-          <h3>Good People</h3>
-          <div class="vibe-divider"></div>
-          <p>Community is at our heart. Come as you are, leave with a smile.</p>
-        </div>
-      </div>
+				<!-- ACAI BOWLS -->
+				<div class="menu-category-premium reveal">
+					<div class="menu-category-premium-header">
+						<div class="category-icon"><span>🥣</span></div>
+						<div class="category-title-group">
+							<h2>Acai Bowls</h2>
+							<div class="category-subtitle">
+								Nourishing. Delicious. Naturally energizing.
+							</div>
+						</div>
+						<div class="category-line"></div>
+					</div>
+					<div class="menu-premium-grid">
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/buiabowl.jpg"
+									alt="Buia Bowl"
+									loading="lazy"
+								/><span class="menu-premium-badge">Corner Favorite</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Buia Bowl</h3>
+									<span class="menu-item-price">$10.50</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Acai</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Base, strawberry, banana, blueberry, granola, nutella</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/locoforcoco.jpg"
+									alt="Loco for Coco"
+									loading="lazy"
+								/><span class="menu-premium-badge popular">Popular</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Loco for Coco</h3>
+									<span class="menu-item-price">$11.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌺</span
+									><span class="mood-label">SOCIAL</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Acai</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Base, coconut flakes, chocolate chips, banana, honey</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/superbowl.jpg"
+									alt="Super Bowl"
+									loading="lazy"
+								/><span class="menu-premium-badge premium">Premium</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Super Bowl</h3>
+									<span class="menu-item-price">$11.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Acai</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Base, banana, mango, goji berries, coconut, agave</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-    </div>
-  </section>
+				<!-- COFFEE & MORE -->
+				<div class="menu-category-premium reveal" id="coffee-more">
+					<div class="menu-category-premium-header">
+						<div class="category-icon"><span>☕</span></div>
+						<div class="category-title-group">
+							<h2>Coffee &amp; More</h2>
+							<div class="category-subtitle">
+								Freshly Ground. Locally Loved.
+							</div>
+						</div>
+						<div class="category-line"></div>
+					</div>
+					<div class="menu-premium-grid">
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/houseblend.jpg"
+									alt="House Blend"
+									loading="lazy"
+								/><span class="menu-premium-badge">Classic</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>House Blend</h3>
+									<span class="menu-item-price">$3.75</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Signature</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Smooth &amp; balanced caramel notes.</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/italianblend.jpg"
+									alt="Italian Blend"
+									loading="lazy"
+								/><span class="menu-premium-badge">Bold</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Italian Blend</h3>
+									<span class="menu-item-price">$4.50</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Signature</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Bold with a rich, creamy finish.</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/coldbrew.jpg"
+									alt="Cold Brew"
+									loading="lazy"
+								/><span class="menu-premium-badge">Popular</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Cold Brew</h3>
+									<span class="menu-item-price">$5.00</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌿</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Small Batch</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Locally brewed in small batches for bold, clean flavor.</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/nitrocoldbrew.jpg"
+									alt="Nitro Cold Brew"
+									loading="lazy"
+								/><span class="menu-premium-badge nitro">Nitro</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Nitro Cold Brew</h3>
+									<span class="menu-item-price">$6.50</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">⚡</span
+									><span class="mood-label">ENERGY</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>On Tap</span>
+								</div>
+								<div class="menu-item-description">
+									<p>
+										Slow-steeped, nitrogen-infused for a velvety, cascading
+										pour. Bold, smooth, no cream needed.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/mushroomcoffee.jpg"
+									alt="Mushroom Coffee"
+									loading="lazy"
+								/><span class="menu-premium-badge premium">Premium</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Mushroom Coffee</h3>
+									<span class="menu-item-price">$6.50</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🧘</span
+									><span class="mood-label">CALM · FOCUS</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Functional</span>
+								</div>
+								<div class="menu-item-description">
+									<p>
+										Freshly ground coffee blended with functional mushrooms for
+										focus, calm &amp; immunity.
+									</p>
+								</div>
+								<div class="menu-item-ingredients">
+									Lion's Mane · Chaga · Cordyceps
+								</div>
+							</div>
+						</div>
+						<div class="menu-premium-item">
+							<div class="menu-premium-item-image">
+								<img
+									src="images/yogurtmuffins.jpg"
+									alt="Yogurt Muffins"
+									loading="lazy"
+								/><span class="menu-premium-badge">Fresh</span>
+							</div>
+							<div class="menu-premium-item-content">
+								<div class="menu-item-header">
+									<h3>Yogurt Muffins</h3>
+									<span class="menu-item-price">$4.50</span>
+								</div>
+								<div class="menu-item-mood">
+									<span class="mood-icon">🌺</span
+									><span class="mood-label">SOCIAL</span>
+								</div>
+								<div class="menu-item-origin">
+									<i class="fas fa-map-pin"></i><span>Bakery</span>
+								</div>
+								<div class="menu-item-description">
+									<p>Moist, lightly sweet, and made with real yogurt.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						style="
+							margin-top: 12px;
+							text-align: center;
+							font-size: clamp(0.6rem, 0.7vw, 0.7rem);
+							color: #999;
+							font-style: italic;
+						"
+					>
+						Made with freshly ground beans.
+					</div>
+				</div>
 
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-logo"><span class="the">The</span><span class="kava">KAVA</span><span class="corner">Corner</span><p class="footer-tagline">Find Your Corner.</p><div class="social-icons"><a href="https://www.instagram.com/thekavacorner/" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
-      <div class="footer-links"><h4>Shop</h4><a href="menu.html">Kava Drinks</a><a href="menu.html">Refreshers</a><a href="menu.html">Acai Bowls</a><a href="menu.html">Coffee</a></div>
-      <div class="footer-links"><h4>Support</h4><a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a></div>
-      <div class="footer-copy">&copy; 2026 The Kava Corner — crafted with calm &amp; color.</div>
-    </div>
-  </footer>
+				<!-- GOOD VIBES · GOOD FOOD · GOOD PEOPLE -->
+				<div class="good-vibes-footer reveal">
+					<div class="vibe-item">
+						<div class="vibe-icon">🌺</div>
+						<h3>Good Vibes</h3>
+						<div class="vibe-divider"></div>
+						<p>Positive energy flows through every cup. Feel the aloha.</p>
+					</div>
+					<div class="vibe-item">
+						<div class="vibe-icon">🥗</div>
+						<h3>Good Food</h3>
+						<div class="vibe-divider"></div>
+						<p>Nourishing ingredients sourced with care for your wellbeing.</p>
+					</div>
+					<div class="vibe-item">
+						<div class="vibe-icon">🤝</div>
+						<h3>Good People</h3>
+						<div class="vibe-divider"></div>
+						<p>
+							Community is at our heart. Come as you are, leave with a smile.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-  <script>
-    (function(){'use strict';var reveals=document.querySelectorAll('.reveal');var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.12});reveals.forEach(function(el){observer.observe(el);});var header=document.getElementById('mainHeader');window.addEventListener('scroll',function(){if(window.scrollY>30){header.classList.add('scrolled');}else{header.classList.remove('scrolled');}});})();
-  </script>
-</body>
+		<footer>
+			<div class="container footer-inner">
+				<div class="footer-logo">
+					<span class="the">The</span><span class="kava">KAVA</span
+					><span class="corner">Corner</span>
+					<p class="footer-tagline">Find Your Corner.</p>
+					<div class="social-icons">
+						<a
+							href="https://www.instagram.com/thekavacorner/"
+							aria-label="Instagram"
+							><i class="fab fa-instagram"></i></a
+						><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a
+						><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+					</div>
+				</div>
+				<div class="footer-links">
+					<h4>Shop</h4>
+					<a href="menu.html">Kava Shell</a><a href="menu.html">Refreshers</a
+					><a href="menu.html">Acai Bowls</a><a href="menu.html">Coffee</a>
+				</div>
+				<div class="footer-links">
+					<h4>Support</h4>
+					<a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a
+					><a href="#">Contact</a>
+				</div>
+				<div class="footer-copy">
+					&copy; 2026 The Kava Corner — crafted with calm &amp; color.
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			(function () {
+				"use strict";
+				var reveals = document.querySelectorAll(".reveal");
+				var observer = new IntersectionObserver(
+					function (entries) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("visible");
+							}
+						});
+					},
+					{ threshold: 0.12 },
+				);
+				reveals.forEach(function (el) {
+					observer.observe(el);
+				});
+				var header = document.getElementById("mainHeader");
+				window.addEventListener("scroll", function () {
+					if (window.scrollY > 30) {
+						header.classList.add("scrolled");
+					} else {
+						header.classList.remove("scrolled");
+					}
+				});
+			})();
+		</script>
+	</body>
 </html>
