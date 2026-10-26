@@ -135,51 +135,38 @@
     .menu-premium-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: clamp(20px, 2.5vw, 32px);
+      gap: clamp(16px, 2vw, 24px);
     }
     .menu-premium-item {
-      display: grid;
-      grid-template-columns: clamp(100px, 15vw, 180px) 1fr;
-      gap: clamp(16px, 2vw, 28px);
-      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(8px);
       border-radius: clamp(20px, 4vw, 32px);
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.3);
       transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      padding: clamp(18px, 2.5vw, 28px);
     }
     .menu-premium-item:hover {
       transform: translateY(-4px);
       box-shadow: 0 20px 50px rgba(232, 130, 181, 0.12);
       border-color: #e882b5;
     }
-    .menu-premium-item-image {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 1;
-    }
-    .menu-premium-item-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .menu-premium-item:hover .menu-premium-item-image img {
-      transform: scale(1.05);
-    }
     .menu-premium-badge {
-      position: absolute;
-      top: 8px;
-      left: 8px;
+      display: inline-block;
       background: #0f2a22;
       color: #fff;
-      padding: 2px 10px;
+      padding: 3px 12px;
       border-radius: 40px;
-      font-size: clamp(0.4rem, 0.5vw, 0.55rem);
+      font-size: clamp(0.45rem, 0.55vw, 0.6rem);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      align-self: flex-start;
     }
     .menu-premium-badge.best-seller { background: linear-gradient(135deg, #e882b5, #d4af37); }
     .menu-premium-badge.limited { background: #d4af37; }
@@ -190,17 +177,12 @@
     .menu-premium-badge.social { background: #e882b5; }
     .menu-premium-badge.calm { background: #7ecfc0; color: #0f2a22; }
     .menu-premium-badge.nitro { background: linear-gradient(135deg, #0f2a22, #4fa392); }
-    .menu-premium-item-content {
-      padding: clamp(14px, 2vw, 24px) clamp(14px, 2vw, 20px) clamp(14px, 2vw, 20px) 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
     .menu-item-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      gap: 12px;
     }
     .menu-item-header h3 {
       font-family: "Oswald", sans-serif;
@@ -244,7 +226,7 @@
       font-size: clamp(0.6rem, 0.7vw, 0.7rem);
       color: #e882b5;
       font-weight: 500;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .menu-item-origin i { font-size: clamp(0.5rem, 0.6vw, 0.6rem); }
     .menu-item-description p {
@@ -260,7 +242,7 @@
       font-style: italic;
     }
 
-    /* Add-ons strip (now inside smoothie section) */
+    /* Add-ons strip */
     .addons-strip {
       display: flex;
       flex-wrap: wrap;
@@ -290,15 +272,13 @@
     }
 
     @media (max-width: 600px) {
-      .menu-premium-item { grid-template-columns: 1fr; }
-      .menu-premium-item-image { aspect-ratio: 16/9; }
-      .menu-premium-item-content { padding: clamp(12px, 2vw, 16px); }
       .menu-category-premium-header { flex-wrap: wrap; }
       .category-line { display: none; }
     }
     @media (min-width: 768px) {
       .menu-premium-grid { grid-template-columns: 1fr 1fr; }
     }
+
     .under-construction {
       background: #e882b5;
       color: #fff;
@@ -407,46 +387,28 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/dragonfruit.jpg" alt="Dragonfruit Energy" loading="lazy" />
-              <span class="menu-premium-badge energy">Energy</span>
+            <span class="menu-premium-badge energy">Energy</span>
+            <div class="menu-item-header">
+              <h3>Dragonfruit Energy</h3>
+              <span class="menu-item-price">$5.50</span>
             </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Dragonfruit Energy</h3>
-                <span class="menu-item-price">$5.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Tropical</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Crisp, uplifting, and naturally energizing.</p>
-              </div>
+            <div class="menu-item-mood">
+              <span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span>
             </div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div>
+            <div class="menu-item-description"><p>Crisp, uplifting, and naturally energizing.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/starfruit.jpg" alt="Star Fruit Energy" loading="lazy" />
-              <span class="menu-premium-badge energy">Energy</span>
+            <span class="menu-premium-badge energy">Energy</span>
+            <div class="menu-item-header">
+              <h3>Star Fruit Energy</h3>
+              <span class="menu-item-price">$5.50</span>
             </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Star Fruit Energy</h3>
-                <span class="menu-item-price">$5.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Tropical</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Tropical, revitalizing, and naturally energizing.</p>
-              </div>
+            <div class="menu-item-mood">
+              <span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span>
             </div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div>
+            <div class="menu-item-description"><p>Tropical, revitalizing, and naturally energizing.</p></div>
           </div>
         </div>
       </div>
@@ -463,109 +425,39 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/lulu.jpg" alt="Lulu Lemonade" loading="lazy" />
-              <span class="menu-premium-badge premium">Premium</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Lulu Lemonade</h3>
-                <span class="menu-item-price">$8.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Botanical</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Lemon juice, water, agave, butterfly pea flower tea.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge premium">Premium</span>
+            <div class="menu-item-header"><h3>Lulu Lemonade</h3><span class="menu-item-price">$8.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div>
+            <div class="menu-item-description"><p>Lemon juice, water, agave, butterfly pea flower tea.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/bubba.jpg" alt="Bubba Breeze" loading="lazy" />
-              <span class="menu-premium-badge new">New</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Bubba Breeze</h3>
-                <span class="menu-item-price">$8.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Tropical</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Pineapple juice, mango puree, hibiscus tea.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge new">New</span>
+            <div class="menu-item-header"><h3>Bubba Breeze</h3><span class="menu-item-price">$8.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Tropical</span></div>
+            <div class="menu-item-description"><p>Pineapple juice, mango puree, hibiscus tea.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/smiley.jpg" alt="Smiley Miley" loading="lazy" />
-              <span class="menu-premium-badge popular">Popular</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Smiley Miley</h3>
-                <span class="menu-item-price">$8.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Berry</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Strawberry syrup, lemon juice, sparkling water, fresh strawberries.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge popular">Popular</span>
+            <div class="menu-item-header"><h3>Smiley Miley</h3><span class="menu-item-price">$8.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Berry</span></div>
+            <div class="menu-item-description"><p>Strawberry syrup, lemon juice, sparkling water, fresh strawberries.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/lai.jpg" alt="Hawaiian Lai" loading="lazy" />
-              <span class="menu-premium-badge">Corner Favorite</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Hawaiian Lai</h3>
-                <span class="menu-item-price">$8.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Island</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Mango guava with a splash of lime.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Corner Favorite</span>
+            <div class="menu-item-header"><h3>Hawaiian Lai</h3><span class="menu-item-price">$8.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Island</span></div>
+            <div class="menu-item-description"><p>Mango guava with a splash of lime.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/amber.jpg" alt="Amber Glow" loading="lazy" />
-              <span class="menu-premium-badge premium">Premium</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Amber Glow</h3>
-                <span class="menu-item-price">$8.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🧘</span><span class="mood-label">CALM</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Citrus</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Organic mango, peach, apple and orange juice. No sugar added.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge premium">Premium</span>
+            <div class="menu-item-header"><h3>Amber Glow</h3><span class="menu-item-price">$8.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Citrus</span></div>
+            <div class="menu-item-description"><p>Organic mango, peach, apple and orange juice. No sugar added.</p></div>
           </div>
         </div>
       </div>
@@ -582,88 +474,32 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/greentea.jpg" alt="Green Tea" loading="lazy" />
-              <span class="menu-premium-badge">Classic</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Green Tea</h3>
-                <span class="menu-item-price">$4.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Botanical</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Light, refreshing, and naturally rich in antioxidants.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Classic</span>
+            <div class="menu-item-header"><h3>Green Tea</h3><span class="menu-item-price">$4.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div>
+            <div class="menu-item-description"><p>Light, refreshing, and naturally rich in antioxidants.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/hibiscustea.jpg" alt="Hibiscus Tea" loading="lazy" />
-              <span class="menu-premium-badge popular">Popular</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Hibiscus Tea</h3>
-                <span class="menu-item-price">$4.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🧘</span><span class="mood-label">CALM</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Botanical</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Tart, floral, and antioxidant rich.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge popular">Popular</span>
+            <div class="menu-item-header"><h3>Hibiscus Tea</h3><span class="menu-item-price">$4.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div>
+            <div class="menu-item-description"><p>Tart, floral, and antioxidant rich.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/butterflytea.jpg" alt="Butterfly Pea Flower Tea" loading="lazy" />
-              <span class="menu-premium-badge calm">Calming</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Butterfly Pea Flower Tea</h3>
-                <span class="menu-item-price">$5.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🧘</span><span class="mood-label">CALM</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Botanical</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Floral, earthy, and calming.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge calm">Calming</span>
+            <div class="menu-item-header"><h3>Butterfly Pea Flower Tea</h3><span class="menu-item-price">$5.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Botanical</span></div>
+            <div class="menu-item-description"><p>Floral, earthy, and calming.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/kava.jpg" alt="Traditional Kava" loading="lazy" />
-              <span class="menu-premium-badge best-seller">Corner Favorite</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Traditional Kava</h3>
-                <span class="menu-item-price">$7.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌺</span><span class="mood-label">SOCIAL · CALM</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Traditional</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Our signature noble kava served in a traditional shell. Smooth, earthy, and grounding.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge best-seller">Corner Favorite</span>
+            <div class="menu-item-header"><h3>Traditional Kava</h3><span class="menu-item-price">$7.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL · CALM</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Traditional</span></div>
+            <div class="menu-item-description"><p>Our signature noble kava served in a traditional shell. Smooth, earthy, and grounding.</p></div>
           </div>
         </div>
       </div>
@@ -680,72 +516,30 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/acai-bowl.jpg" alt="Tropical Açaí Bowl" loading="lazy" />
-              <span class="menu-premium-badge new">New</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Tropical Açaí Bowl</h3>
-                <span class="menu-item-price">$11.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Açaí</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Açaí, pineapple, banana, coconut flakes, granola, honey.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge new">New</span>
+            <div class="menu-item-header"><h3>Tropical Açaí Bowl</h3><span class="menu-item-price">$11.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Açaí</span></div>
+            <div class="menu-item-description"><p>Açaí, pineapple, banana, coconut flakes, granola, honey.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/acai-bowl.jpg" alt="Bula Bowl" loading="lazy" />
-              <span class="menu-premium-badge best-seller">Corner Favorite</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Bula Bowl</h3>
-                <span class="menu-item-price">$11.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Açaí</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Açaí, banana, strawberry, blueberry, granola, Nutella.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge best-seller">Corner Favorite</span>
+            <div class="menu-item-header"><h3>Bula Bowl</h3><span class="menu-item-price">$11.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Açaí</span></div>
+            <div class="menu-item-description"><p>Açaí, banana, strawberry, blueberry, granola, Nutella.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/acai-bowl.jpg" alt="Super Bowl" loading="lazy" />
-              <span class="menu-premium-badge premium">Premium</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Super Bowl</h3>
-                <span class="menu-item-price">$11.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Açaí</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Açaí, banana, blueberries, coconut flakes, granola, honey.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge premium">Premium</span>
+            <div class="menu-item-header"><h3>Super Bowl</h3><span class="menu-item-price">$11.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Açaí</span></div>
+            <div class="menu-item-description"><p>Açaí, banana, blueberries, coconut flakes, granola, honey.</p></div>
           </div>
         </div>
       </div>
 
-      <!-- F’REAL SMOOTHIES & MILKSHAKES (with integrated add-ons) -->
+      <!-- F’REAL SMOOTHIES & MILKSHAKES -->
       <div class="menu-category-premium reveal">
         <div class="menu-category-premium-header">
           <div class="category-icon"><span>🥤</span></div>
@@ -757,92 +551,36 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/strawberrybananasmoothie.jpg" alt="Strawberry Banana Smoothie" loading="lazy" />
-              <span class="menu-premium-badge popular">Popular</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Strawberry Banana Smoothie</h3>
-                <span class="menu-item-price">$8.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Smoothie</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Classic strawberry-banana blend, creamy and refreshing.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge popular">Popular</span>
+            <div class="menu-item-header"><h3>Strawberry Banana Smoothie</h3><span class="menu-item-price">$8.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌿</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Smoothie</span></div>
+            <div class="menu-item-description"><p>Classic strawberry-banana blend, creamy and refreshing.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/strawberrysmoothie.jpg" alt="Strawberry Smoothie" loading="lazy" />
-              <span class="menu-premium-badge">Classic</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Strawberry Smoothie</h3>
-                <span class="menu-item-price">$8.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Smoothie</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Sweet, ripe strawberries blended to perfection.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Classic</span>
+            <div class="menu-item-header"><h3>Strawberry Smoothie</h3><span class="menu-item-price">$8.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Smoothie</span></div>
+            <div class="menu-item-description"><p>Sweet, ripe strawberries blended to perfection.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/vanillamilkshake.jpg" alt="Vanilla Milkshake" loading="lazy" />
-              <span class="menu-premium-badge">Classic</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Vanilla Milkshake</h3>
-                <span class="menu-item-price">$8.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🧘</span><span class="mood-label">CALM</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Milkshake</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Rich, creamy vanilla shake made with real ice cream.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Classic</span>
+            <div class="menu-item-header"><h3>Vanilla Milkshake</h3><span class="menu-item-price">$8.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Milkshake</span></div>
+            <div class="menu-item-description"><p>Rich, creamy vanilla shake made with real ice cream.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/mangosmoothie.jpg" alt="Mango Smoothie" loading="lazy" />
-              <span class="menu-premium-badge">Tropical</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Mango Smoothie</h3>
-                <span class="menu-item-price">$8.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Smoothie</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Sun-ripened mango blended into a tropical treat.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Tropical</span>
+            <div class="menu-item-header"><h3>Mango Smoothie</h3><span class="menu-item-price">$8.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Smoothie</span></div>
+            <div class="menu-item-description"><p>Sun-ripened mango blended into a tropical treat.</p></div>
           </div>
         </div>
 
-        <!-- Integrated Add-ons Strip -->
+        <!-- Add-ons Strip -->
         <div class="addons-strip">
           <span><strong>Extra Creamer</strong> <span class="addon-price">$0.75</span> — Coconut, oat, almond or half &amp; half</span>
           <span><strong>Protein</strong> <span class="addon-price">$1.50</span></span>
@@ -862,25 +600,11 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/turmericshot.jpg" alt="Turmeric Lime Ginger" loading="lazy" />
-              <span class="menu-premium-badge calm">Wellness</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Turmeric Lime Ginger</h3>
-                <span class="menu-item-price">$4.75</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🧘</span><span class="mood-label">CALM · FOCUS</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Wellness</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Turmeric, lime, ginger, orange juice.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge calm">Wellness</span>
+            <div class="menu-item-header"><h3>Turmeric Lime Ginger</h3><span class="menu-item-price">$4.75</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM · FOCUS</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Wellness</span></div>
+            <div class="menu-item-description"><p>Turmeric, lime, ginger, orange juice.</p></div>
           </div>
         </div>
       </div>
@@ -897,25 +621,11 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/oj.jpg" alt="Freshly Squeezed OJ" loading="lazy" />
-              <span class="menu-premium-badge best-seller">Fresh</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Freshly Squeezed OJ</h3>
-                <span class="menu-item-price">$5.50</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Fresh</span>
-              </div>
-              <div class="menu-item-description">
-                <p>100% orange juice, squeezed fresh daily.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge best-seller">Fresh</span>
+            <div class="menu-item-header"><h3>Freshly Squeezed OJ</h3><span class="menu-item-price">$5.50</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Fresh</span></div>
+            <div class="menu-item-description"><p>100% orange juice, squeezed fresh daily.</p></div>
           </div>
         </div>
       </div>
@@ -932,25 +642,11 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/coldbrew.jpg" alt="Cold Brew" loading="lazy" />
-              <span class="menu-premium-badge">Popular</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Cold Brew</h3>
-                <span class="menu-item-price">$4.75</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Locally Brewed</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Locally brewed, smooth and bold. Caffeine for real.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Popular</span>
+            <div class="menu-item-header"><h3>Cold Brew</h3><span class="menu-item-price">$4.75</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Locally Brewed</span></div>
+            <div class="menu-item-description"><p>Locally brewed, smooth and bold. Caffeine for real.</p></div>
           </div>
         </div>
       </div>
@@ -967,49 +663,19 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/mushroomcoffee.jpg" alt="Mushroom Coffee" loading="lazy" />
-              <span class="menu-premium-badge premium">Premium</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Mushroom Coffee</h3>
-                <span class="menu-item-price">$5.75</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🧘</span><span class="mood-label">CALM · FOCUS</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Functional</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Freshly ground coffee blended with functional mushrooms for focus, calm &amp; immunity.</p>
-              </div>
-              <div class="menu-item-ingredients">
-                Lion's Mane · Chaga · Cordyceps
-              </div>
-            </div>
+            <span class="menu-premium-badge premium">Premium</span>
+            <div class="menu-item-header"><h3>Mushroom Coffee</h3><span class="menu-item-price">$5.75</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM · FOCUS</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Functional</span></div>
+            <div class="menu-item-description"><p>Freshly ground coffee blended with functional mushrooms for focus, calm &amp; immunity.</p></div>
+            <div class="menu-item-ingredients">Lion's Mane · Chaga · Cordyceps</div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/coffee.jpg" alt="House Coffee" loading="lazy" />
-              <span class="menu-premium-badge">Classic</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>House Coffee</h3>
-                <span class="menu-item-price">$4.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Signature</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Smooth &amp; balanced caramel notes.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Classic</span>
+            <div class="menu-item-header"><h3>House Coffee</h3><span class="menu-item-price">$4.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">⚡</span><span class="mood-label">ENERGY</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Signature</span></div>
+            <div class="menu-item-description"><p>Smooth &amp; balanced caramel notes.</p></div>
           </div>
         </div>
       </div>
@@ -1026,46 +692,18 @@
         </div>
         <div class="menu-premium-grid">
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/yogurtmuffin.jpg" alt="Yogurt Muffins" loading="lazy" />
-              <span class="menu-premium-badge">Fresh</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Yogurt Muffins</h3>
-                <span class="menu-item-price">$4.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Bakery</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Moist, lightly sweet, and made with real yogurt.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Fresh</span>
+            <div class="menu-item-header"><h3>Yogurt Muffins</h3><span class="menu-item-price">$4.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🌺</span><span class="mood-label">SOCIAL</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Bakery</span></div>
+            <div class="menu-item-description"><p>Moist, lightly sweet, and made with real yogurt.</p></div>
           </div>
           <div class="menu-premium-item">
-            <div class="menu-premium-item-image">
-              <img src="images/applecoffeecake.jpg" alt="Apple Coffee Cake" loading="lazy" />
-              <span class="menu-premium-badge">Fresh</span>
-            </div>
-            <div class="menu-premium-item-content">
-              <div class="menu-item-header">
-                <h3>Apple Coffee Cake</h3>
-                <span class="menu-item-price">$5.00</span>
-              </div>
-              <div class="menu-item-mood">
-                <span class="mood-icon">🧘</span><span class="mood-label">CALM</span>
-              </div>
-              <div class="menu-item-origin">
-                <i class="fas fa-map-pin"></i><span>Bakery</span>
-              </div>
-              <div class="menu-item-description">
-                <p>Warm spiced apple cake with a crumbly topping.</p>
-              </div>
-            </div>
+            <span class="menu-premium-badge">Fresh</span>
+            <div class="menu-item-header"><h3>Apple Coffee Cake</h3><span class="menu-item-price">$5.00</span></div>
+            <div class="menu-item-mood"><span class="mood-icon">🧘</span><span class="mood-label">CALM</span></div>
+            <div class="menu-item-origin"><i class="fas fa-map-pin"></i><span>Bakery</span></div>
+            <div class="menu-item-description"><p>Warm spiced apple cake with a crumbly topping.</p></div>
           </div>
         </div>
       </div>
@@ -1101,9 +739,9 @@
         <span class="the">The</span><span class="kava">KAVA</span><span class="corner">Corner</span>
         <p class="footer-tagline">Find Your Corner.</p>
         <div class="social-icons">
-          <a href="https://www.instagram.com/thekavacorner/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/thekavacorner?vrfl=MXdiMDZ5am9ibmtweA==" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1Bs1wWWsEX/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.tiktok.com/t/ZPLAtHNx2/" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
       <div class="footer-links">
@@ -1118,10 +756,10 @@
         <a href="#">FAQ</a>
         <a href="#">Shipping</a>
         <a href="#">Returns</a>
-        <a href="#">Contact</a>
+        <a href="mailto:thekavacorner@gmail.com">Contact</a>
       </div>
       <div class="footer-copy">
-        &copy; 2026 The Kava Corner — crafted with calm &amp; color.
+        &copy; 2026 The Kava Corner — crafted with calm &amp; color. · <a href="mailto:thekavacorner@gmail.com" style="color: rgba(255,255,255,0.6); text-decoration: underline;">thekavacorner@gmail.com</a>
       </div>
     </div>
   </footer>
@@ -1140,16 +778,11 @@
         },
         { threshold: 0.12 }
       );
-      reveals.forEach(function (el) {
-        observer.observe(el);
-      });
+      reveals.forEach(function (el) { observer.observe(el); });
       var header = document.getElementById("mainHeader");
       window.addEventListener("scroll", function () {
-        if (window.scrollY > 30) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
+        if (window.scrollY > 30) { header.classList.add("scrolled"); }
+        else { header.classList.remove("scrolled"); }
       });
     })();
   </script>
